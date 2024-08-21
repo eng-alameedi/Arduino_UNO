@@ -27,6 +27,10 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
 
+if(CMAKE_BUILD_TYPE MATCHES Release)
+  target_compile_options(${file_name} INTERFACE -03 -DNDEBUG)
+endif()
+
 add_executable(${file_name} ${SOURCE})
 
 target_link_libraries(${file_name} PRIVATE iLog)
