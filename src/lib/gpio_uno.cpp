@@ -8,4 +8,9 @@
 
 #include "gpio_uno.h"
 
+void set_pin_mode(uint8_t pin, pin_mode mode)
+{
+  // code here
+}
+
 // code here
