@@ -14,11 +14,12 @@ void delay(unsigned int ms)
   OCR0A = 249;
   timer_ctc_setup();
 
-  while((count--) >= 0)
+  while(ms > 0)
     {
       TCNT0 = 0;
 
       while(!(TIFR0 & (1 << 1)));
       TIFR0 |= (1 << 1);
+      ms--;
     }
 }

@@ -8,7 +8,7 @@
 #ifndef _GPIO_UNO_H_
 #define _GPIO_UNO_H_
 
-#include <cstdint>                          // to call the (uint8_t) type.
+// #include <cstdint>                          // to call the (uint8_t) type.
 
 #define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
 #define DDRB      *((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
