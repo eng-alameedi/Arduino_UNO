@@ -9,12 +9,12 @@
 #include "gpio_uno.h"
 #include <cstdint>
 
-void set_pin_mode(uint8_t pin, pin_mode mode)
+void set_pin_mode(unsigned int pin, pin_mode mode)
 {
   DDRB |= (mode << pin);
 }
 
-void set_pin_state(uint8_t pin, pin_state state)
+void set_pin_state(unsigned int pin, pin_state state)
 {
   if(state == HIGH)
     PORTB |= (HIGH << pin);

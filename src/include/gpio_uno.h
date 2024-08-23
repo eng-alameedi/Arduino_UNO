@@ -38,7 +38,7 @@ enum pin_b { PIN13 = 5 };                   // define the pins sets for each ban
  * @return: this function return nothing (void).
  *
  **/
-void pin_set_mode(uint8_t, pin_mode);
+void pin_set_mode(unsigned int, pin_mode);
 
 /**
  *
@@ -51,7 +51,7 @@ void pin_set_mode(uint8_t, pin_mode);
  * @return: this function return nothing (void)
  *
  **/
-void pin_set_state(uint8_t, pin_state);
+void pin_set_state(unsigned int, pin_state);
 
 #define PIN_MODE(number, mode) pin_set_mode(number, mode)         // define a macro to call the function set_pin_mode
 #define PIN_STATE(number, state) pin_set_state(number, state)     // define a macro to call the function set_pin_state
