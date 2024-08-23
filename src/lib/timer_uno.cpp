@@ -7,3 +7,18 @@ void timer_ctc_setup()
                                  // all to set the prescaler to 64
   TIMSK0 |= (1 << 1); // use 1 for OCIE0A to enable timer0 to compare interrupt.
 }
+
+void delay(unsigned int ms)
+{
+  unsigned int count = ms/4;     // timer0 contain 4 micro second when set the prescaler to 64
+  OCR0A = 249;
+  timer_ctc_setup();
+
+  while((count--) >= 0)
+    {
+      TCNT0 = 0;
+
+      while(!(TIFR0 & (1 << 1)));
+      TIFR0 |= (1 << 1);
+    }
+}
