@@ -17,9 +17,9 @@
  **/
 #define TCCR0A *((volatile unsigned char*)0x44) // define of Timer/Counter0 Control Register (A).
 #define TCCR0B *((volatile unsigned char*)0x45) // define of Timer/Counter0 Control Register (B)
-#define TCNT0  (0x46) // define of Timer/Counter0 Register.
+#define TCNT0  *((volatile unsigned char*)0x46) // define of Timer/Counter0 Register.
 #define OCR0A  *((volatile unsigned char*)0x47) // define of Output Compare0 Register (A)
-#define OCR0B  (0x48) // define of Output Compare0 Register (B)
+#define OCR0B  *((volatile unsigned char*)0x48) // define of Output Compare0 Register (B)
 #define TIMSK0 *((volatile unsigned char*)0x6E) // define of Timer/Counter0 Interrupt Mask Register
 #define TIFR0  *((volatile unsigned char*)0x35) // define of Timer/Counter0 0 Interrupt Flag Register
 
@@ -44,7 +44,9 @@
 #define TIFR1  (0x36) // Timer/Counter1 Interrupt Flag Register.
 
 
-void timer_ctc_setup()
+void timer_ctc_setup();
+
+void delay(unsigned int);
 
 
 #endif       // _TIMER_UNO_H_
