@@ -7,10 +7,17 @@
 //
 
 #include "gpio_uno.h"
+#include <cstdint>
 
 void set_pin_mode(uint8_t pin, pin_mode mode)
 {
-  // code here
+  DDRB |= (mode << pin);
 }
 
-// code here
+void set_pin_state(uint8_t pin, pin_state state)
+{
+  if(state == HIGH)
+    PORTB |= (HIGH << pin);
+  else
+    PORTB &= ~(HIGH << pin);
+}
