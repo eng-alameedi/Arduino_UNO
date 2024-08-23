@@ -25,6 +25,8 @@
 enum pin_mode { INPUT = 0, OUTPUT = 1 };    // define a pin mode as (output) or (input).
 enum pin_state { LOW = 0, HIGH = 1 };       // define a pin state voltage as (low) or (high).
 
+enum pin_b { PIN13 = 5 };                   // define the pins sets for each bank.
+
 /**
  *
  * @brief: this function set the pin mode (output) or (input) depend on pin number.
