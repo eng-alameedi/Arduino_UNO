@@ -10,9 +10,9 @@
 
 #include <cstdint>                          // to call the (uint8_t) type.
 
-#define PORTB     (0x25)                    // gpio (B) group data register.
-#define DDRB      (0x24)                    // gpio (B) group data direction register.
-#define PINB      (0x23)                    // gpio (B) group input pins address.
+#define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
+#define DDRB      *((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
+#define PINB      *((volatile unsigned char*)0x23)                    // gpio (B) group input pins address.
 
 #define PORTC     (0x28)                    // gpio (C) group data register.
 #define DDRC      (0x27)                    // gpio (C) group data direction register.
