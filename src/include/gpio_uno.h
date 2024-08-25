@@ -51,5 +51,15 @@ void pin_set_mode(unsigned int, pin_mode);
  **/
 void pin_set_state(unsigned int, pin_state);
 
-
+/**
+ *
+ * @brief: this function check the pin input, after set the pin direction to
+ *input, and pull-up resistor to on.
+ *
+ * @param1: this function take a (unsigned int) pin number.
+ *
+ * @return: this function return (true) or (false) depend on input pin state.
+ *
+ **/
+bool pull_check(const unsigned int&);
 #endif     // _GPIO_UNO_H_
