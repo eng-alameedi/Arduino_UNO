@@ -7,7 +7,6 @@
 //
 
 #include "gpio_uno.h"
-// #include <cstdint>
 
 void pin_set_mode(unsigned int pin, pin_mode mode)
 {
@@ -20,4 +19,11 @@ void pin_set_state(unsigned int pin, pin_state state)
     PORTB |= (HIGH << pin);
   else
     PORTB &= ~(HIGH << pin);
+}
+
+bool pull_check(const unsigned int& pin_number)
+{
+  if(!(PINB&(1<<pin_number)))
+    return false;
+  return true;
 }
