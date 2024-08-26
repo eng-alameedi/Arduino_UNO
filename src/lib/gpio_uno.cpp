@@ -8,11 +8,13 @@
 
 #include "gpio_uno.h"
 
+// <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set the pin mode (direction) that mean (output/input).
 void pin_set_mode(unsigned int pin, pin_mode mode)
 {
   DDRB |= (mode << pin);
 }
 
+// <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set the pin state (voltage) that mean (high/low).
 void pin_set_state(unsigned int pin, pin_state state)
 {
   if(state == HIGH)
@@ -21,6 +23,7 @@ void pin_set_state(unsigned int pin, pin_state state)
     PORTB &= ~(HIGH << pin);
 }
 
+// <<<<<<<<<<====================>>>>>>>>>>(pull_check()) this function check the input pin state (high/low), and return true or false.
 bool pull_check(const unsigned int& pin_number)
 {
   if(!(PINB&(1<<pin_number)))
