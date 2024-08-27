@@ -7,11 +7,12 @@
 //
 
 #include "gpio_uno.h"
+#include <stdint.h>
 
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set the pin mode (direction) that mean (output/input).
 void pin_set_mode(unsigned int pin, pin_mode mode)
 {
-  DDRB |= (mode << pin);
+  DDRB |= (mode << static_cast<uint8_t>(pin));
 }
 
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set the pin state (voltage) that mean (high/low).
