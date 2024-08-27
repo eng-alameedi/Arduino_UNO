@@ -9,7 +9,6 @@
 #ifndef _UTILS_UNO_H_
 #define _UTILS_UNO_H_
 
-
 #define PIN_MODE(number, mode)       pin_set_mode(number, mode) // define a macro to call the function set_pin_mode
 #define PIN_STATE(number, state)     pin_set_state(number,state) // define a macro to call the function set_pin_state
 
