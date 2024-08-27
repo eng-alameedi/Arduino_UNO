@@ -16,7 +16,7 @@
  *         its create a pin maps for digital pin (B) with (8bit) integer type.
  *
  **/
-enum class Digital_Pin_B: uint8_t {
+enum Digital_Pin_B: uint8_t {
   PIN13 = 5,
   PIN12 = 4,
   PIN11 = 3,

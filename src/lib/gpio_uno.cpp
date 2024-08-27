@@ -7,7 +7,7 @@
 //
 
 #include "gpio_uno.h"
-#include <cstdint>
+#include <stdint.h>
 
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set the pin mode (direction) that mean (output/input).
 void pin_set_mode(unsigned int pin, pin_mode mode)
