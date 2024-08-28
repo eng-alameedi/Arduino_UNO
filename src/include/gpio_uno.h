@@ -24,6 +24,12 @@
 
 enum pin_mode { INPUT = 0, OUTPUT = 1 };                              // define a pin mode as (output) or (input).
 enum pin_state { LOW = 0, HIGH = 1 };                                 // define a pin state voltage as (low) or (high).
+enum class Reg_type {
+    DDx,    // for DDR(B,C,D)
+    PTx,    // for PORT(B,C,D)
+    PNx     // for PIN(B,C,D)
+};
+
 
 /**
  *
@@ -68,11 +74,14 @@ bool pull_check(const unsigned int &);
  * @brief: this function select the right gpio bank (b,c,d) depend on the
  *         digital pin number.
  *
- * @param1: this function take (unsigned 8bit int type (uint8_t))
+ * @param1: this function take (volatile unsigned char*) for the port selection (DDR,PORT,PIN)
  *
- * @return: this function return pointer of type (volatile unsigned char*) for
- *          the bank value (b,c,d) depend on pin number.
+ * @param2: this function take (unsigned 8bint int type) for the port number
+ *
+ * @param3: this function take (enum Reg_type) for select different situation of the register
+ *
+ * @return: this function return nothing (void)
  *
  **/
-volatile unsigned char* port_from_pin(uint8_t);
+void port_from_pin(volatile unsigned char*,uint8_t,Reg_type);
 #endif     // _GPIO_UNO_H_
