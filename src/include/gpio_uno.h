@@ -83,5 +83,5 @@ bool pull_check(const unsigned int &);
  * @return: this function return nothing (void)
  *
  **/
-void port_from_pin(volatile unsigned char*,uint8_t,Reg_type);
+char port_from_pin(uint8_t);
 #endif     // _GPIO_UNO_H_
