@@ -8,22 +8,28 @@
 #ifndef _GPIO_UNO_H_
 #define _GPIO_UNO_H_
 
-// #include <cstdint>                          // to call the (uint8_t) type.
+#include <stdint.h>                                                   // to call the (uint8_t) type.
 
 #define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
 #define DDRB      *((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
 #define PINB      *((volatile unsigned char*)0x23)                    // gpio (B) group input pins address.
 
-#define PORTC     (0x28)                    // gpio (C) group data register.
-#define DDRC      (0x27)                    // gpio (C) group data direction register.
-#define PINC      (0x26)                    // gpio (C) group input pins address.
+#define PORTC     *((volatile unsigned char*)0x28)                    // gpio (C) group data register.
+#define DDRC      *((volatile unsigned char*)0x27)                    // gpio (C) group data direction register.
+#define PINC      *((volatile unsigned char*)0x26)                    // gpio (C) group input pins address.
 
-#define PORTD     (0x2B)                    // gpio (D) group data register.
-#define DDRD      (0x2A)                    // gpio (D) group data direction register.
-#define PIND      (0x29)                    // gpio (D) group input pins address.
+#define PORTD     *((volatile unsigned char*)0x2B)                    // gpio (D) group data register.
+#define DDRD      *((volatile unsigned char*)0x2A)                    // gpio (D) group data direction register.
+#define PIND      *((volatile unsigned char*)0x29)                    // gpio (D) group input pins address.
 
-enum pin_mode { INPUT = 0, OUTPUT = 1 };    // define a pin mode as (output) or (input).
-enum pin_state { LOW = 0, HIGH = 1 };       // define a pin state voltage as (low) or (high).
+enum pin_mode { INPUT = 0, OUTPUT = 1 };                              // define a pin mode as (output) or (input).
+enum pin_state { LOW = 0, HIGH = 1 };                                 // define a pin state voltage as (low) or (high).
+enum class Reg_type {
+    DDx,    // for DDR(B,C,D)
+    PTx,    // for PORT(B,C,D)
+    PNx     // for PIN(B,C,D)
+};
+
 
 /**
  *
@@ -54,12 +60,28 @@ void pin_set_state(unsigned int, pin_state);
 /**
  *
  * @brief: this function check the pin input, after set the pin direction to
- *input, and pull-up resistor to on.
+ *         input, and pull-up resistor to on.
  *
  * @param1: this function take a (unsigned int) pin number.
  *
  * @return: this function return (true) or (false) depend on input pin state.
  *
  **/
-bool pull_check(const unsigned int&);
+bool pull_check(const unsigned int &);
+
+/**
+ *
+ * @brief: this function select the right gpio bank (b,c,d) depend on the
+ *         digital pin number.
+ *
+ * @param1: this function take (volatile unsigned char*) for the port selection (DDR,PORT,PIN)
+ *
+ * @param2: this function take (unsigned 8bint int type) for the port number
+ *
+ * @param3: this function take (enum Reg_type) for select different situation of the register
+ *
+ * @return: this function return nothing (void)
+ *
+ **/
+char port_from_pin(uint8_t);
 #endif     // _GPIO_UNO_H_
