@@ -10,10 +10,14 @@
 #include "pin_map.h"
 
 #include <stdint.h>
+#include <assert.h>
 
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set the pin mode (direction) that mean (output/input).
 void pin_set_mode(unsigned int pin, pin_mode mode)
 {
+  volatile unsigned char* dd;
+  port_from_pin(dd,pin,Reg_type::DDx);
+  assert(*dd!=DDRB);
   DDRB |= (mode << static_cast<uint8_t>(pin));
 }
 
@@ -34,8 +38,8 @@ bool pull_check(const unsigned int& pin_number)
   return true;
 }
 
-// <<<<<<<<<<====================>>>>>>>>>>(port_form_pin) this function return the port (b,c,d) depend on pin number.
-void port_from_pin(volatile unsigned char* gpio_port, uint8_t pin_number)
+// <<<<<<<<<<====================>>>>>>>>>>(port_form_pin) this function select the port (b,c,d) depend on pin number.
+void port_from_pin(volatile unsigned char* gpio_port, uint8_t pin_number, Reg_type reg)
 {
   switch (pin_number)
     {
@@ -45,7 +49,41 @@ void port_from_pin(volatile unsigned char* gpio_port, uint8_t pin_number)
     case PIN10:
     case PIN9:
     case PIN8:
-      *gpio_port = DDRB;
+      switch(reg)
+        {
+        case Reg_type::DDx:
+          *gpio_port = DDRB;
+          break;
+        case Reg_type::PTx:
+          *gpio_port = PORTB;
+          break;
+        case Reg_type::PNx:
+          *gpio_port = PINB;
+          break;
+        }
+      break;
+    }
+  switch (pin_number)
+    {
+      case PIN7:
+      case PIN6:
+      case PIN5:
+      case PIN4:
+      case PIN3:
+      case PIN2:
+      case PIN1:
+      case PIN0:
+        switch (reg) {
+          case Reg_type::DDx:
+            *gpio_port = DDRD;
+            break;
+          case Reg_type::PTx:
+            *gpio_port = PORTD;
+            break;
+          case Reg_type::PNx:
+            *gpio_port = PIND;
+            break;
+      }
       break;
     }
 }
