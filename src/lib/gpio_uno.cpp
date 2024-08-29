@@ -43,7 +43,7 @@ void port_from_pin(port_bank& port, digital_pin pin)
   if(static_cast<uint8_t>(pin) >= 8)
     {
       port.PORTx = &PORTB;
-      port.DDRx = &DDRB;
+      *port.DDRx = DDRB;
       port.PINx = &PINB;
       port.bit = static_cast<uint8_t>(pin)-8;
     }
