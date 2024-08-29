@@ -42,9 +42,9 @@ enum digital_pin: uint8_t {
  *
  **/
 struct port_bank {
-  volatile uint8_t* DDRx;
-  volatile uint8_t* PORTx;
-  volatile uint8_t* PINx;
+  volatile unsigned char* DDRx;
+  volatile unsigned char* PORTx;
+  volatile unsigned char* PINx;
   uint8_t bit;
 };
 #endif     // _PIN_MAP_H_
