@@ -8,6 +8,7 @@
 #ifndef _GPIO_UNO_H_
 #define _GPIO_UNO_H_
 
+#include "pin_map.h"
 #include <stdint.h>                                                   // to call the (uint8_t) type.
 
 #define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
@@ -24,12 +25,6 @@
 
 enum pin_mode { INPUT = 0, OUTPUT = 1 };                              // define a pin mode as (output) or (input).
 enum pin_state { LOW = 0, HIGH = 1 };                                 // define a pin state voltage as (low) or (high).
-enum class Reg_type {
-    DDx,    // for DDR(B,C,D)
-    PTx,    // for PORT(B,C,D)
-    PNx     // for PIN(B,C,D)
-};
-
 
 /**
  *
@@ -83,5 +78,5 @@ bool pull_check(const unsigned int &);
  * @return: this function return nothing (void)
  *
  **/
-char port_from_pin(uint8_t);
+void port_from_pin(struct& digital_pin, uint8_t);
 #endif     // _GPIO_UNO_H_
