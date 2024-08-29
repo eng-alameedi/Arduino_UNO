@@ -12,7 +12,7 @@
 #include <stdint.h>                                                   // to call the (uint8_t) type.
 
 #define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
-#define DDRB      (0x24) //*((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
+#define DDRB      *((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
 #define PINB      *((volatile unsigned char*)0x23)                    // gpio (B) group input pins address.
 
 #define PORTC     *((volatile unsigned char*)0x28)                    // gpio (C) group data register.
@@ -50,7 +50,7 @@ void pin_set_mode(digital_pin, pin_mode);
  * @return: this function return nothing (void)
  *
  **/
-void pin_set_state(unsigned int, pin_state);
+void pin_set_state(digital_pin, pin_state);
 
 /**
  *
@@ -62,7 +62,7 @@ void pin_set_state(unsigned int, pin_state);
  * @return: this function return (true) or (false) depend on input pin state.
  *
  **/
-bool pull_check(const unsigned int &);
+bool pull_check(digital_pin);
 
 /**
  *
