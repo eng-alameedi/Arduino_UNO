@@ -78,5 +78,5 @@ bool pull_check(const unsigned int &);
  * @return: this function return nothing (void)
  *
  **/
-void port_from_pin(port_bank&, uint8_t);
+void port_from_pin(port_bank&, digital_pin);
 #endif     // _GPIO_UNO_H_
