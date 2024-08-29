@@ -9,7 +9,6 @@
 #define _GPIO_UNO_H_
 
 #include "pin_map.h"
-#include <stdint.h>                                                   // to call the (uint8_t) type.
 
 #define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
 #define DDRB      *((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
@@ -22,9 +21,6 @@
 #define PORTD     *((volatile unsigned char*)0x2B)                    // gpio (D) group data register.
 #define DDRD      *((volatile unsigned char*)0x2A)                    // gpio (D) group data direction register.
 #define PIND      *((volatile unsigned char*)0x29)                    // gpio (D) group input pins address.
-
-enum pin_mode { INPUT = 0, OUTPUT = 1 };                              // define a pin mode as (output) or (input).
-enum pin_state { LOW = 0, HIGH = 1 };                                 // define a pin state voltage as (low) or (high).
 
 /**
  *
@@ -63,20 +59,4 @@ void pin_set_state(digital_pin, pin_state);
  *
  **/
 bool pull_check(digital_pin);
-
-/**
- *
- * @brief: this function select the right gpio bank (b,c,d) depend on the
- *         digital pin number.
- *
- * @param1: this function take (volatile unsigned char*) for the port selection (DDR,PORT,PIN)
- *
- * @param2: this function take (unsigned 8bint int type) for the port number
- *
- * @param3: this function take (enum Reg_type) for select different situation of the register
- *
- * @return: this function return nothing (void)
- *
- **/
-void port_from_pin(port_bank&, digital_pin);
 #endif     // _GPIO_UNO_H_

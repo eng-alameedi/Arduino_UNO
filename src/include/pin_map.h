@@ -10,6 +10,15 @@
 
 #include <stdint.h>
 
+enum pin_mode : uint8_t {
+  INPUT = 0,
+  OUTPUT = 1
+};                                                      // define a pin mode as (output) or (input).
+enum pin_state : uint8_t {
+  LOW = 0,
+  HIGH = 1
+};                                                      // define a pin state voltage as (low) or (high).
+
 /**
  *
  * @brief: this enumeration contains the digital GPIO pins maps form (0 - 13).
@@ -31,20 +40,5 @@ enum digital_pin: uint8_t {
   PIN2 = 2,
   PIN1 = 1,
   PIN0 = 0
-};
-
-/**
- *
- * @brief: define a struct type for hold the port bank like (DDRx, PORTx, PINx)
- *
- *
- *
- *
- **/
-struct port_bank {
-  volatile unsigned char* DDRx;
-  volatile unsigned char* PORTx;
-  volatile unsigned char* PINx;
-  uint8_t bit;
 };
 #endif     // _PIN_MAP_H_
