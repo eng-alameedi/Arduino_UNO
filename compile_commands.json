@@ -1,19 +1,25 @@
 [
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/gpio_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -g -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/gpio_init.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
+  "output": "CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/gpio_init.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -g -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/gpio_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
   "output": "CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/gpio_uno.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/timer_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -g -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/timer_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
   "output": "CMakeFiles/Arduino_UNO_Library.elf.dir/src/lib/timer_uno.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/main.cpp",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -g -mmcu=atmega328p -DF_CPU=16000000UL -std=gnu++17 -o CMakeFiles/Arduino_UNO_Library.elf.dir/src/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/main.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/main.cpp",
   "output": "CMakeFiles/Arduino_UNO_Library.elf.dir/src/main.cpp.o"
 }
