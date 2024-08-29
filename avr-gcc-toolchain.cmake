@@ -12,5 +12,5 @@ set(CMAKE_CXX_COMPILER avr-g++)
 # set(CMAKE_CXX_COMPILER ${AVR_TOOLCHAIN_PATH}/bin/avr-g++)
 
 # Define the CMake flags for AVR
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mmcu=atmega328p -DF_CPU=16000000UL")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmcu=atmega328p -DF_CPU=16000000UL")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -mmcu=atmega328p -DF_CPU=16000000UL")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -mmcu=atmega328p -DF_CPU=16000000UL")
