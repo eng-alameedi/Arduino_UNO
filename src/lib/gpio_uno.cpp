@@ -16,7 +16,7 @@ void pin_set_mode(digital_pin pin, pin_mode mode)
 {
   port_bank port;
   port_from_pin(port, pin);
-  port.DDRx |= (mode << port.bit);
+  *port.DDRx |= (mode << port.bit);
   // DDRB |= (mode << static_cast<uint8_t>(pin));
 }
 
