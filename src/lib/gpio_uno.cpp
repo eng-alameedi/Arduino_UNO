@@ -36,19 +36,32 @@ bool pull_check(const unsigned int& pin_number)
 }
 
 // <<<<<<<<<<====================>>>>>>>>>>(port_form_pin) this function select the port (b,c,d) depend on pin number.
-void port_from_pin(port_bank& port, uint8_t pin)
+void port_from_pin(port_bank& port, digital_pin pin)
 {
   switch (pin) {
-  PIN13:
-  PIN12:
-  PIN11:
-  PIN10:
-  PIN9:
-  PIN8:
+  case PIN13:
+  case PIN12:
+  case PIN11:
+  case PIN10:
+  case PIN9:
+  case PIN8:
     port.PORTx = &PORTB;
     port.DDRx = &DDRB;
     port.PINx = &PINB;
-    port.bit = pin;
+    port.bit = static_cast<uint8_t>(pin)-8;
+    break;
+  case PIN7:
+  case PIN6:
+  case PIN5:
+  case PIN4:
+  case PIN3:
+  case PIN2:
+  case PIN1:
+  case PIN0:
+    port.PORTx = &PORTD;
+    port.DDRx = &DDRD;
+    port.PINx = &PIND;
+    port.bit = static_cast<uint8_t>(pin);
     break;
       }
 }
