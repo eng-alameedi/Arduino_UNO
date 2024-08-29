@@ -17,19 +17,19 @@
  *
  **/
 enum digital_pin: uint8_t {
-  PIN13 = 5,
-  PIN12 = 4,
-  PIN11 = 3,
-  PIN10 = 2,
-  PIN9 = 1,
-  PIN8 = 0,
+  PIN13 = 13,
+  PIN12 = 12,
+  PIN11 = 11,
+  PIN10 = 10,
+  PIN9 = 9,
+  PIN8 = 8,
   PIN7 = 7,
   PIN6 = 6,
   PIN5 = 5,
   PIN4 = 4,
   PIN3 = 3,
   PIN2 = 2,
-  PIN1 =1,
+  PIN1 = 1,
   PIN0 = 0
 };
 
