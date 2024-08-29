@@ -37,7 +37,7 @@ enum pin_state { LOW = 0, HIGH = 1 };                                 // define 
  * @return: this function return nothing (void).
  *
  **/
-void pin_set_mode(unsigned int, pin_mode);
+void pin_set_mode(digital_pin, pin_mode);
 
 /**
  *
