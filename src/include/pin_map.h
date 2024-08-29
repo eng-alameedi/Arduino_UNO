@@ -46,5 +46,5 @@ struct port_bank {
   volatile uint8_t* PORTx;
   volatile uint8_t* PINx;
   uint8_t bit;
-}
+};
 #endif     // _PIN_MAP_H_
