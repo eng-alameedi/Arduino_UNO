@@ -36,42 +36,19 @@ bool pull_check(const unsigned int& pin_number)
 }
 
 // <<<<<<<<<<====================>>>>>>>>>>(port_form_pin) this function select the port (b,c,d) depend on pin number.
-char port_from_pin(uint8_t pin_number)
+void port_from_pin(port_bank& port, uint8_t pin)
 {
-  char reg_type;
-  switch (pin_number)
-    {
-    case PIN13:
-    case PIN12:
-    case PIN11:
-    case PIN10:
-    case PIN9:
-    case PIN8:
-      reg_type = 'B';
-      break;
-    }
-  /*switch (pin_number)
-    {
-      case PIN7:
-      case PIN6:
-      case PIN5:
-      case PIN4:
-      case PIN3:
-      case PIN2:
-      case PIN1:
-      case PIN0:
-        switch (reg) {
-          case Reg_type::DDx:
-            *gpio_port = DDRD;
-            break;
-          case Reg_type::PTx:
-            *gpio_port = PORTD;
-            break;
-          case Reg_type::PNx:
-            *gpio_port = PIND;
-            break;
+  switch (pin) {
+  PIN13:
+  PIN12:
+  PIN11:
+  PIN10:
+  PIN9:
+  PIN8:
+    port.PORTx = &PORTB;
+    port.DDRx = &DDRB;
+    port.PINx = &PINB;
+    port.bit = pin;
+    break;
       }
-      break;
-      }*/
-  return (reg_type);
 }
