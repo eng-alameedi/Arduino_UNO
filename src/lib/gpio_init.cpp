@@ -15,3 +15,7 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
   PINx = nullptr;
   bit = 0;
 }
+
+GPIO::~GPIO() {
+  // code here
+}
