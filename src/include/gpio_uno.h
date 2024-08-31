@@ -10,21 +10,28 @@
 
 #include "pin_map.h"
 
-#define PORTB     *((volatile unsigned char*)0x25)                    // gpio (B) group data register.
-#define DDRB      *((volatile unsigned char*)0x24)                    // gpio (B) group data direction register.
-#define PINB      *((volatile unsigned char*)0x23)                    // gpio (B) group input pins address.
+#define PORTB *((volatile unsigned char*)0x25)  // gpio (B) group data register.
+#define DDRB \
+  *((volatile unsigned char*)0x24)  // gpio (B) group data direction register.
+#define PINB \
+  *((volatile unsigned char*)0x23)  // gpio (B) group input pins address.
 
-#define PORTC     *((volatile unsigned char*)0x28)                    // gpio (C) group data register.
-#define DDRC      *((volatile unsigned char*)0x27)                    // gpio (C) group data direction register.
-#define PINC      *((volatile unsigned char*)0x26)                    // gpio (C) group input pins address.
+#define PORTC *((volatile unsigned char*)0x28)  // gpio (C) group data register.
+#define DDRC \
+  *((volatile unsigned char*)0x27)  // gpio (C) group data direction register.
+#define PINC \
+  *((volatile unsigned char*)0x26)  // gpio (C) group input pins address.
 
-#define PORTD     *((volatile unsigned char*)0x2B)                    // gpio (D) group data register.
-#define DDRD      *((volatile unsigned char*)0x2A)                    // gpio (D) group data direction register.
-#define PIND      *((volatile unsigned char*)0x29)                    // gpio (D) group input pins address.
+#define PORTD *((volatile unsigned char*)0x2B)  // gpio (D) group data register.
+#define DDRD \
+  *((volatile unsigned char*)0x2A)  // gpio (D) group data direction register.
+#define PIND \
+  *((volatile unsigned char*)0x29)  // gpio (D) group input pins address.
 
 /**
  *
- * @brief: this function set the pin mode (output) or (input) depend on pin number.
+ * @brief: this function set the pin mode (output) or (input) depend on pin
+ *number.
  *
  * @param1: this function take (uint8_t) for pin number.
  *
@@ -33,7 +40,7 @@
  * @return: this function return nothing (void).
  *
  **/
-void pin_set_mode(digital_pin, pin_mode);
+bool pin_set_mode(digital_pin, pin_mode);
 
 /**
  *
@@ -46,7 +53,7 @@ void pin_set_mode(digital_pin, pin_mode);
  * @return: this function return nothing (void)
  *
  **/
-void pin_set_state(digital_pin, pin_state);
+bool pin_set_state(digital_pin, pin_state);
 
 /**
  *
@@ -59,4 +66,4 @@ void pin_set_state(digital_pin, pin_state);
  *
  **/
 bool pull_check(digital_pin);
-#endif     // _GPIO_UNO_H_
+#endif  // _GPIO_UNO_H_
