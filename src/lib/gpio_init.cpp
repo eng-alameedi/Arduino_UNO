@@ -6,15 +6,16 @@
 //
 
 #include "gpio_init.h"
-#include "gpio_uno.h"
+
 #include "pin_map.h"
 
-GPIO::GPIO(digital_pin pin, pin_mode mode): pin{pin},mode{mode}
-{
-  pin_set_mode(pin, mode);
+GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
+  DDRx = nullptr;
+  PORTx = nullptr;
+  PINx = nullptr;
+  bit = 0;
 }
 
-GPIO::~GPIO()
-{
+GPIO::~GPIO() {
   // code here
 }

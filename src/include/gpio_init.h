@@ -26,7 +26,7 @@ class GPIO {
 
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
-  virtual ~GPIO() = default;    // GPIO class destructor.
+  ~GPIO();                      // GPIO class destructor.
 
  protected:
   virtual void set_pinmode(digital_pin,

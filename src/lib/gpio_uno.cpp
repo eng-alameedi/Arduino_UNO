@@ -7,21 +7,30 @@
 //
 
 #include "gpio_uno.h"
-#include "pin_map.h"
 
 #include <stdint.h>
 
-// <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set the pin mode (direction) that mean (output/input).
-void pin_set_mode(digital_pin pin, pin_mode mode)
-{
-  port_bank port;
-  port_from_pin(port, pin);
-  *(port.DDRx) |= (mode << port.bit);
-  // DDRB |= (mode << static_cast<uint8_t>(pin));
-}
+#include "pin_map.h"
 
-// <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set the pin state (voltage) that mean (high/low).
-void pin_set_state(digital_pin pin, pin_state state)
+// <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set
+// the pin mode (direction) that mean (output/input).
+bool pin_set_mode(digital_pin pin, pin_mode mode) {
+  uint8_t bi;
+  if (static_cast<uint8_t>(pin) >= 8) {
+    bi = static_cast<uint8_t>(pin) - 8;
+    DDRB |= (mode << bi);
+    return true;
+  } else {
+    bi = static_cast<uint8_t>(pin);
+    DDRC |= (mode << bi);
+    return true;
+  }
+  return false;
+}
+/*
+// <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set
+the pin state (voltage) that mean (high/low). void pin_set_state(digital_pin
+pin, pin_state state)
 {
   port_bank port;
   port_from_pin(port, pin);
@@ -33,8 +42,9 @@ void pin_set_state(digital_pin pin, pin_state state)
     *port.PORTx &= ~(HIGH << port.bit);
 }
 
-// <<<<<<<<<<====================>>>>>>>>>>(pull_check()) this function check the input pin state (high/low), and return true or false.
-bool pull_check(digital_pin pin_number)
+// <<<<<<<<<<====================>>>>>>>>>>(pull_check()) this function check
+the input pin state (high/low), and return true or false. bool
+pull_check(digital_pin pin_number)
 {
   port_bank port;
   port_from_pin(port, pin_number);
@@ -44,8 +54,9 @@ bool pull_check(digital_pin pin_number)
   return true;
 }
 
-// <<<<<<<<<<====================>>>>>>>>>>(port_form_pin) this function select the port (b,c,d) depend on pin number.
-void port_from_pin(port_bank& port, digital_pin pin)
+// <<<<<<<<<<====================>>>>>>>>>>(port_form_pin) this function select
+the port (b,c,d) depend on pin number. void port_from_pin(port_bank& port,
+digital_pin pin)
 {
   if(static_cast<uint8_t>(pin) >= 8)
     {
@@ -62,3 +73,4 @@ void port_from_pin(port_bank& port, digital_pin pin)
       port.bit = static_cast<uint8_t>(pin);
     }
 }
+*/
