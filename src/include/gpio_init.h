@@ -27,6 +27,15 @@ class GPIO {
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
   virtual ~GPIO() = default;    // GPIO class destructor.
+
+ protected:
+  virtual void set_pinmode(digital_pin,
+                           pin_mode) = 0;  // set the pin mode (out,in)
+  virtual void set_pinstate(
+      digital_pin,
+      pin_state) = 0;  // set the pin state (low,high) of the output mode pin.
+  virtual int digital_pinread(
+      digital_pin) = 0;  // read the pin state (0,1) of the input mode pin.
 };
 
 #endif  // _GPIO_INIT_H_
