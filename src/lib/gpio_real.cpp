@@ -9,6 +9,7 @@
 #include "gpio_real.h"
 
 #include "gpio_init.h"
+#include "gpio_uno.h"
 #include "pin_map.h"
 
 GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) {
@@ -20,7 +21,8 @@ GPIO_REAL::~GPIO_REAL() {
 }
 
 void GPIO_REAL::set_pinmode(digital_pin p, pin_mode m) {
-  // code here
+  bool condition{false};
+  condition = pin_set_mode(p, m);
 }
 
 void GPIO_REAL::set_pinstate(digital_pin p, pin_state s) {
