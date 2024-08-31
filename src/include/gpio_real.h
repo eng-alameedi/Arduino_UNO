@@ -10,8 +10,12 @@
 #define _GPIO_REAL_H_
 
 #include "gpio_init.h"
+#include "pin_map.h"
 
 class GPIO_REAL : protected GPIO {
+ public:
+  GPIO_REAL(digital_pin, pin_mode);
+
  protected:
   void set_pinmode(digital_pin, pin_mode) override;
 };
