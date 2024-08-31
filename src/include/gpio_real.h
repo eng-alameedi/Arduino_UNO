@@ -11,7 +11,7 @@
 
 #include "gpio_init.h"
 
-class GPIO_REAL : public GPIO {
+class GPIO_REAL : protected GPIO {
  protected:
   void set_pinmode(digital_pin, pin_mode) override;
 };
