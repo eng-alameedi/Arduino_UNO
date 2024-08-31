@@ -15,10 +15,15 @@ GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) {
   set_pinmode(p, m);
 }
 
-GPIO_REAL::~GPIO_REAL() {
+void GPIO_REAL::set_pinmode(digital_pin p, pin_mode m) {
   // code here
 }
 
-void GPIO_REAL::set_pinmode(digital_pin p, pin_mode m) {
+void GPIO_REAL::set_pinstate(digital_pin p, pin_state s) {
   // code here
+}
+
+int GPIO_REAL::digital_pinread(digital_pin p) {
+  // code here
+  return 0;
 }
