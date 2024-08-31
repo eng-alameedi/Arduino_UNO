@@ -7,3 +7,14 @@
 //
 
 #include "gpio_real.h"
+
+#include "gpio_init.h"
+#include "pin_map.h"
+
+GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) {
+  set_pinmode(p, m);
+}
+
+void GPIO_REAL::set_pinmode(digital_pin p, pin_mode) {
+  // code here
+}
