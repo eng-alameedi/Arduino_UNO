@@ -1,38 +1,26 @@
-cmake_minimum_required(VERSION 3.10..3.14)
+cmake_minimum_required(VERSION 3.10..3.20)
 project(Arduino_UNO_Library
-        VERSION 1.0.0
-        LANGUAGES CXX
-       )
-
-# Include the AVR toolchain
-include(${CMAKE_SOURCE_DIR}/avr-gcc-toolchain.cmake)
-
-# Include directories for Arduino core files
-include_directories(src/include)
-
-# Source files
-file(GLOB SOURCES
-    src/main.cpp
-    src/lib/*.cpp
+  VERSION 1.0.0
+  LANGUAGES CXX
 )
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS True)
+# Specify the Arduino core directory (adjust path accordingly)
+set(ARDUINO_CORE_PATH /home/alameedi/Github/Arduino_UNO)
 
-# Create the executable
-add_executable(${PROJECT_NAME}.elf ${SOURCES})
+# Include the Arduino core library
+include_directories(${ARDUINO_CORE_PATH})
 
-# Convert the ELF file to HEX format for Arduino
-add_custom_command(TARGET ${PROJECT_NAME}.elf
-    POST_BUILD
-    COMMAND avr-objcopy -O ihex -R .eeprom ${PROJECT_NAME}.elf ${PROJECT_NAME}.hex
-    COMMENT "Generating HEX file for Arduino"
-)
+# Add include directory for the library headers
+include_directories(${CMAKE_SOURCE_DIR}/src/include)
 
-# Upload command
-add_custom_target(upload
-    COMMAND avrdude -c arduino -p m328p -P /dev/ttyUSB0 -U flash:w:${PROJECT_NAME}.hex:i
-    DEPENDS ${PROJECT_NAME}.hex
-    COMMENT "Uploading HEX file to Arduino Uno"
-)
+# set the source file
+file(GLOB SOURCES src/main.cpp src/lib/*.cpp)
+
+# Add source files
+add_library(ArduinoLib STATIC ${SOURCES})
+
+# Add examples
+add_subdirectory(examples)
+
+# Add tests
+add_subdirectory(tests)
