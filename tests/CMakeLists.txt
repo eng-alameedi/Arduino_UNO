@@ -5,6 +5,8 @@ project(Arduino_UNO_Library
         LANGUAGES CXX
        )
 
+
+
 # Add source files
 set(GLOB SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.cpp)
 
@@ -27,4 +29,3 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 add_executable(runTests test_gpio.cpp)
 target_link_libraries(runTests gtest gtest_main ArduinoLib)
-
