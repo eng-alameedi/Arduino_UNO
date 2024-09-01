@@ -5,4 +5,20 @@ project(Arduino_UNO_Library
         LANGUAGES CXX
        )
 
-# build instruction
+# Add source files
+set(GLOB ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.cpp SOURCES)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/src/include)
+
+# Add the library
+add_library(ArduinoLib ${SOURCES})
+
+# Add Google Test
+add_subdirectory(lib/googletest)
+include_directories(lib/googletest/googletest/include)
+
+# Add unit tests
+add_executable(runTests tests/test_gpio.cpp)
+target_link_libraries(runTests gtest gtest_main ArduinoLib)
+
