@@ -12,9 +12,7 @@
 #include "gpio_uno.h"
 #include "pin_map.h"
 
-GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) {
-  set_pinmode(p, m);
-}
+GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) { set_pinmode(); }
 
 GPIO_REAL::~GPIO_REAL() {
   // code here
