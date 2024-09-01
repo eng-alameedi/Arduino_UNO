@@ -36,3 +36,6 @@ add_custom_target(upload
     DEPENDS ${PROJECT_NAME}.hex
     COMMENT "Uploading HEX file to Arduino Uno"
 )
+
+# add the test sub-directory
+add_subdirectory(tests)
