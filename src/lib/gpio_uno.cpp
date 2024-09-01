@@ -14,18 +14,9 @@
 
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_mode()) this function set
 // the pin mode (direction) that mean (output/input).
-bool pin_set_mode(digital_pin pin, pin_mode mode) {
-  uint8_t bi;
-  if (static_cast<uint8_t>(pin) >= 8) {
-    bi = static_cast<uint8_t>(pin) - 8;
-    DDRB |= (mode << bi);
-    return true;
-  } else {
-    bi = static_cast<uint8_t>(pin);
-    DDRC |= (mode << bi);
-    return true;
-  }
-  return false;
+bool pin_set_mode(volatile unsigned char* DD, pin_mode mode, uint8_t b) {
+  *DD |= (mode << b);
+  return true;
 }
 /*
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set
