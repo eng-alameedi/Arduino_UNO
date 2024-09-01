@@ -8,7 +8,7 @@ project(Arduino_UNO_Library
 
 
 # Add source files
-set(GLOB SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.cpp)
+file(GLOB SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.cpp)
 
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/src/include)
