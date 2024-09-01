@@ -6,7 +6,7 @@ project(Arduino_UNO_Library
        )
 
 # Add source files
-set(GLOB ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.cpp SOURCES)
+set(GLOB SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.cpp)
 
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/src/include)
@@ -14,11 +14,17 @@ include_directories(${CMAKE_SOURCE_DIR}/src/include)
 # Add the library
 add_library(ArduinoLib ${SOURCES})
 
-# Add Google Test
-add_subdirectory(lib/googletest)
-include_directories(lib/googletest/googletest/include)
+# Fetch GoogleTest
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        release-1.12.1  # You can change this to the desired version
+)
+FetchContent_MakeAvailable(googletest)
 
 # Add unit tests
-add_executable(runTests tests/test_gpio.cpp)
+enable_testing()
+add_executable(runTests test_gpio.cpp)
 target_link_libraries(runTests gtest gtest_main ArduinoLib)
 
