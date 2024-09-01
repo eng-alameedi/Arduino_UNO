@@ -12,7 +12,7 @@
 #include "pin_map.h"
 
 class GPIO {
- private:
+ protected:
   volatile unsigned char* DDRx;   // pointer that hold the address of DDR(B,C,D)
                                   // depend on pin number.
   volatile unsigned char* PORTx;  // pointer that hold the address of
@@ -23,14 +23,14 @@ class GPIO {
   digital_pin pin;                // enum define the pin number map.
   pin_mode mode;                  // enum pin mode (OUT,IN).
   pin_state state;                // enum pin state (HIGH,LOW).
+  int error_count{};  // error count when function not work properly.
 
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
   ~GPIO();                      // GPIO class destructor.
 
  protected:
-  virtual void set_pinmode(digital_pin,
-                           pin_mode) = 0;  // set the pin mode (out,in)
+  virtual void set_pinmode() = 0;  // set the pin mode (out,in)
   virtual void set_pinstate(
       digital_pin,
       pin_state) = 0;  // set the pin state (low,high) of the output mode pin.

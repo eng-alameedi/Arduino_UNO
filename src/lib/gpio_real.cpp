@@ -12,17 +12,14 @@
 #include "gpio_uno.h"
 #include "pin_map.h"
 
-GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) {
-  set_pinmode(p, m);
-}
+GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) { set_pinmode(); }
 
 GPIO_REAL::~GPIO_REAL() {
   // code here
 }
 
-void GPIO_REAL::set_pinmode(digital_pin p, pin_mode m) {
-  bool condition{false};
-  condition = pin_set_mode(p, m);
+void GPIO_REAL::set_pinmode() {
+  if (!(pin_set_mode(DDRx, mode, bit))) error_count += 1;
 }
 
 void GPIO_REAL::set_pinstate(digital_pin p, pin_state s) {
