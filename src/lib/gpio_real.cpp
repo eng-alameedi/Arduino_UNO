@@ -20,9 +20,9 @@ GPIO_REAL::~GPIO_REAL() {
   // code here
 }
 
-void GPIO_REAL::set_pinmode(digital_pin p, pin_mode m) {
+void GPIO_REAL::set_pinmode() {
   bool condition{false};
-  condition = pin_set_mode(p, m);
+  condition = pin_set_mode(DDRx, mode);
 }
 
 void GPIO_REAL::set_pinstate(digital_pin p, pin_state s) {
