@@ -40,7 +40,7 @@
  * @return: this function return nothing (void).
  *
  **/
-bool pin_set_mode(digital_pin, pin_mode);
+bool pin_set_mode(volatile unsigned char*, pin_mode);
 
 /**
  *
