@@ -18,7 +18,7 @@ class GPIO_REAL : public GPIO {
   ~GPIO_REAL();
 
  protected:
-  void set_pinmode(digital_pin, pin_mode) override;
+  void set_pinmode(volatile unsigned char*, pin_mode) override;
   void set_pinstate(digital_pin, pin_state) override;
   int digital_pinread(digital_pin) override;
 };

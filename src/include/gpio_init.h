@@ -29,7 +29,7 @@ class GPIO {
   ~GPIO();                      // GPIO class destructor.
 
  protected:
-  virtual void set_pinmode(digital_pin,
+  virtual void set_pinmode(volatile unsigned char*,
                            pin_mode) = 0;  // set the pin mode (out,in)
   virtual void set_pinstate(
       digital_pin,
