@@ -13,14 +13,11 @@ include_directories(${ARDUINO_CORE_PATH})
 # Add include directory for the library headers
 include_directories(${CMAKE_SOURCE_DIR}/src/include)
 
+# set the source file
+file(GLOB SOURCES src/main.cpp src/lib/*.cpp)
+
 # Add source files
-add_library(ArduinoLib STATIC
-  src/GPIO.cpp
-  src/Timer.cpp
-  src/UART.cpp
-  src/SPI.cpp
-  src/I2C.cpp
-)
+add_library(ArduinoLib STATIC ${SOURCES})
 
 # Add examples
 add_subdirectory(examples)
