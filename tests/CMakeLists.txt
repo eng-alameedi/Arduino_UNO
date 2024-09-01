@@ -14,7 +14,7 @@ file(GLOB SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/lib*.
 include_directories(${CMAKE_SOURCE_DIR}/src/include)
 
 # Add the library
-add_library(ArduinoLib ${SOURCES})
+#add_library(ArduinoLib ${SOURCES})
 
 # Fetch GoogleTest
 include(FetchContent)
