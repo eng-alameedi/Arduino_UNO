@@ -23,6 +23,7 @@ class GPIO {
   digital_pin pin;                // enum define the pin number map.
   pin_mode mode;                  // enum pin mode (OUT,IN).
   pin_state state;                // enum pin state (HIGH,LOW).
+  int error_count{};  // error count when function not work properly.
 
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
