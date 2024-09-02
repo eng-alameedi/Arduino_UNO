@@ -21,11 +21,12 @@ bool pin_set_mode(volatile unsigned char* DD, pin_mode mode, uint8_t b) {
 
 // <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set
 // the pin state (voltage) that mean (high/low).
-void pin_set_state(volatile unsigned char* PT, pin_state state, uint8_t b) {
+bool pin_set_state(volatile unsigned char* PT, pin_state state, uint8_t b) {
   if (state == HIGH)
     *PT |= (HIGH << b);
   else
     *PT &= ~(HIGH << b);
+  return true;
 }
 /*
 // <<<<<<<<<<====================>>>>>>>>>>(pull_check()) this function check

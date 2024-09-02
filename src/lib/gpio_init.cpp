@@ -16,8 +16,9 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
     //*PORTx = PORTB;
     //*PINx = PINB;
     unsigned char a = 0;
+    unsigned char b = 0;
     DDRx = &a;
-    PORTx = nullptr;
+    PORTx = &b;
     PINx = nullptr;
     bit = static_cast<uint8_t>(pin) - 8;
   } else {
@@ -38,4 +39,6 @@ pin_mode GPIO::get_mode() const { return mode; }
 
 pin_state GPIO::get_state() const { return state; }
 
-volatile unsigned char* GPIO::get_portx() const { return DDRx; }
+volatile unsigned char* GPIO::get_ddrx() const { return DDRx; }
+
+volatile unsigned char* GPIO::get_portx() const { return PORTx; }

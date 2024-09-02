@@ -22,11 +22,11 @@ void GPIO_REAL::set_pinmode() {
   if (!(pin_set_mode(DDRx, mode, bit))) error_count += 1;
 }
 
-void GPIO_REAL::set_pinstate() {
-  // code here
+void GPIO_REAL::set_pinstate(pin_state st) {
+  if (!(pin_set_state(PORTx, st, bit))) error_count += 1;
 }
 
-int GPIO_REAL::digital_pinread(digital_pin p) {
+int GPIO_REAL::digital_pinread() {
   // code here
   return 0;
 }
