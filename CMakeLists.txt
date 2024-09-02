@@ -4,6 +4,9 @@ project(Arduino_UNO_Library
   LANGUAGES CXX
 )
 
+# set the executable filename
+set(file_name Arduino)
+
 # Specify the Arduino core directory (adjust path accordingly)
 set(ARDUINO_CORE_PATH /home/alameedi/Github/Arduino_UNO)
 
@@ -15,6 +18,9 @@ include_directories(${CMAKE_SOURCE_DIR}/src/include)
 
 # set the source file
 file(GLOB SOURCES src/main.cpp src/lib/*.cpp)
+
+# add executable file
+add_executable(${file_name} ${SOURCES})
 
 # Add source files
 add_library(ArduinoLib STATIC ${SOURCES})
