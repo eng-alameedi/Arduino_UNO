@@ -12,9 +12,12 @@
 
 GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
   if (pin >= 8) {
-    *DDRx = DDRB;
-    *PORTx = PORTB;
-    *PINx = PINB;
+    //*DDRx = DDRB;
+    //*PORTx = PORTB;
+    //*PINx = PINB;
+    DDRx = nullptr;
+    PORTx = nullptr;
+    PINx = nullptr;
     bit = static_cast<uint8_t>(pin) - 8;
   } else {
     *DDRx = DDRD;

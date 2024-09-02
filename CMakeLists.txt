@@ -19,6 +19,10 @@ include_directories(${CMAKE_SOURCE_DIR}/src/include)
 # set the source file
 file(GLOB SOURCES src/main.cpp src/lib/*.cpp)
 
+# add debug flag
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug)
+endif()
 # add executable file
 add_executable(${file_name} ${SOURCES})
 
