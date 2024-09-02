@@ -22,6 +22,11 @@ TEST(GPIOTest, VarTest) {
   ASSERT_EQ(static_cast<uint8_t>(OUTPUT), 1);
 }
 
+TEST(GPIOTest, PortTest) {
+  GPIO_REAL gpio(PIN13, OUTPUT);
+  ASSERT_EQ(static_cast<int>(*(gpio.get_portx())), 37);
+}
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
