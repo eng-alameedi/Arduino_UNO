@@ -18,21 +18,17 @@ bool pin_set_mode(volatile unsigned char* DD, pin_mode mode, uint8_t b) {
   *DD |= (mode << b);
   return true;
 }
-/*
-// <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set
-the pin state (voltage) that mean (high/low). void pin_set_state(digital_pin
-pin, pin_state state)
-{
-  port_bank port;
-  port_from_pin(port, pin);
-  if(state == HIGH)
-    *port.PORTx |= (HIGH << port.bit);
-    //PORTB |= (HIGH << pin);
-  else
-    //PORTB &= ~(HIGH << pin);
-    *port.PORTx &= ~(HIGH << port.bit);
-}
 
+// <<<<<<<<<<====================>>>>>>>>>>(pin_set_state()) this function set
+// the pin state (voltage) that mean (high/low).
+bool pin_set_state(volatile unsigned char* PT, pin_state state, uint8_t b) {
+  if (state == HIGH)
+    *PT |= (HIGH << b);
+  else
+    *PT &= ~(HIGH << b);
+  return true;
+}
+/*
 // <<<<<<<<<<====================>>>>>>>>>>(pull_check()) this function check
 the input pin state (high/low), and return true or false. bool
 pull_check(digital_pin pin_number)

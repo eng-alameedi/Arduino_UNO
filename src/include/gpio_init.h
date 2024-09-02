@@ -31,15 +31,15 @@ class GPIO {
   digital_pin get_pin() const;
   pin_mode get_mode() const;
   pin_state get_state() const;
+  volatile unsigned char* get_ddrx() const;
   volatile unsigned char* get_portx() const;
 
  protected:
   virtual void set_pinmode() = 0;  // set the pin mode (out,in)
-  virtual void set_pinstate(
-      digital_pin,
-      pin_state) = 0;  // set the pin state (low,high) of the output mode pin.
-  virtual int digital_pinread(
-      digital_pin) = 0;  // read the pin state (0,1) of the input mode pin.
+
+  virtual void set_pinstate(pin_state) = 0;  // set the pin state (low,high).
+
+  virtual int digital_pinread() = 0;  // read the pin state (0,1).
 };
 
 #endif  // _GPIO_INIT_H_

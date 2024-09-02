@@ -12,7 +12,6 @@ TEST(GPIOTest, Initialization) {
 // Test case for setting and getting pin state
 TEST(GPIOTest, SetGetState) {
   GPIO_REAL gpio(PIN13, OUTPUT);
-  // gpio.set_state(HIGH);
   // ASSERT_EQ(gpio.get_state(), HIGH);
   // gpio.set_state(LOW);
   ASSERT_EQ(gpio.get_state(), LOW);
@@ -24,7 +23,7 @@ TEST(GPIOTest, VarTest) {
 
 TEST(GPIOTest, PortTest) {
   GPIO_REAL gpio(PIN13, OUTPUT);
-  ASSERT_EQ(static_cast<int>(*(gpio.get_portx())), 37);
+  ASSERT_EQ(static_cast<int>(*(gpio.get_ddrx())), 32);
 }
 
 int main(int argc, char **argv) {

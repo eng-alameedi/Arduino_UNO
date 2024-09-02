@@ -53,7 +53,7 @@ bool pin_set_mode(volatile unsigned char*, pin_mode, uint8_t b);
  * @return: this function return nothing (void)
  *
  **/
-bool pin_set_state(digital_pin, pin_state);
+bool pin_set_state(volatile unsigned char*, pin_state, uint8_t);
 
 /**
  *
