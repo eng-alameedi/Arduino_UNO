@@ -31,6 +31,7 @@ class GPIO {
   digital_pin get_pin() const;
   pin_mode get_mode() const;
   pin_state get_state() const;
+  volatile unsigned char* get_portx() const;
 
  protected:
   virtual void set_pinmode() = 0;  // set the pin mode (out,in)
