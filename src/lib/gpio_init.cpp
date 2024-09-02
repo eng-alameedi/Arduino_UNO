@@ -15,7 +15,7 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
     //*DDRx = DDRB;
     //*PORTx = PORTB;
     //*PINx = PINB;
-    unsigned char a = 5;
+    unsigned char a = 0;
     DDRx = &a;
     PORTx = nullptr;
     PINx = nullptr;
