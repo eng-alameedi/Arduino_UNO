@@ -28,6 +28,9 @@ class GPIO {
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
   ~GPIO();                      // GPIO class destructor.
+  digital_pin get_pin() const;
+  pin_mode get_mode() const;
+  pin_state get_state() const;
 
  protected:
   virtual void set_pinmode() = 0;  // set the pin mode (out,in)

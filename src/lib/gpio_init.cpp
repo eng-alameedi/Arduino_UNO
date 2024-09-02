@@ -27,3 +27,9 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
 GPIO::~GPIO() {
   // code here
 }
+
+digital_pin GPIO::get_pin() const { return pin; }
+
+pin_mode GPIO::get_mode() const { return mode; }
+
+pin_state GPIO::get_state() const { return state; }
