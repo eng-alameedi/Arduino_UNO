@@ -5,8 +5,8 @@
 // Test case for GPIO pin initialization
 TEST(GPIOTest, Initialization) {
   GPIO_REAL gpio(PIN13, OUTPUT);
-  // ASSERT_EQ(gpio.get_pin(), PIN13);
-  // ASSERT_EQ(gpio.get_mode(), OUTPUT);
+  ASSERT_EQ(gpio.get_pin(), PIN13);
+  ASSERT_EQ(gpio.get_mode(), OUTPUT);
 }
 
 // Test case for setting and getting pin state
