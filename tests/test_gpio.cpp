@@ -15,7 +15,9 @@ TEST(GPIOTest, SetGetState) {
   // gpio.set_state(HIGH);
   // ASSERT_EQ(gpio.get_state(), HIGH);
   // gpio.set_state(LOW);
-  // ASSERT_EQ(gpio.get_state(), LOW);
+  ASSERT_EQ(gpio.get_state(), LOW);
+}
+TEST(GPIOTest, VarTest) {
   ASSERT_EQ(static_cast<uint8_t>(PIN13), 13);
   ASSERT_EQ(static_cast<uint8_t>(OUTPUT), 1);
 }
