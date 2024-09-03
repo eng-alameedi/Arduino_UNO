@@ -26,8 +26,10 @@ void GPIO_REAL::set_pinstate(pin_state st) {
   // if (!(pin_set_state(PORTx, st, bit))) error_count += 1;
   if (st) {
     *PORTx |= (HIGH << bit);
+    state = st;
   } else if (!st) {
     *PORTx &= (HIGH << bit);
+    state = st;
   } else {
     error_count += 1;
   }
