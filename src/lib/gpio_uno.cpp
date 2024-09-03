@@ -6,6 +6,7 @@
 // functions for each pin.
 //
 
+/*
 #include "gpio_uno.h"
 
 #include <stdint.h>
