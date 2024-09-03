@@ -11,20 +11,24 @@
 #include "pin_map.h"
 
 GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
+  unsigned char a = 0;
+  unsigned char b = 0;
+  unsigned char c = 0;
   if (pin >= 8) {
     //*DDRx = DDRB;
     //*PORTx = PORTB;
     //*PINx = PINB;
-    unsigned char a = 0;
-    unsigned char b = 0;
     DDRx = &a;
     PORTx = &b;
-    PINx = nullptr;
+    PINx = &c;
     bit = static_cast<uint8_t>(pin) - 8;
   } else {
-    *DDRx = DDRD;
-    *PORTx = PORTD;
-    *PINx = PIND;
+    //*DDRx = DDRD;
+    //*PORTx = PORTD;
+    //*PINx = PIND;
+    DDRx = &a;
+    PORTx = &b;
+    PINx = &c;
     bit = static_cast<uint8_t>(pin);
   }
 }

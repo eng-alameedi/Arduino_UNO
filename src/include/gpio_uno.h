@@ -8,7 +8,7 @@
 #ifndef _GPIO_UNO_H_
 #define _GPIO_UNO_H_
 
-#include "pin_map.h"
+// #include "pin_map.h"
 
 #define PORTB *((volatile unsigned char*)0x25)  // gpio (B) group data register.
 #define DDRB \
@@ -28,7 +28,7 @@
 #define PIND \
   *((volatile unsigned char*)0x29)  // gpio (D) group input pins address.
 
-/**
+/*
  *
  * @brief: this function set the pin mode (output) or (input) depend on pin
  *number.
@@ -39,10 +39,10 @@
  *
  * @return: this function return nothing (void).
  *
- **/
-bool pin_set_mode(volatile unsigned char*, pin_mode, uint8_t b);
+ */
+// bool pin_set_mode(volatile unsigned char*, pin_mode, uint8_t b);
 
-/**
+/*
  *
  * @brief: this function set the pin state to (low) or (high) voltage.
  *
@@ -52,10 +52,10 @@ bool pin_set_mode(volatile unsigned char*, pin_mode, uint8_t b);
  *
  * @return: this function return nothing (void)
  *
- **/
-bool pin_set_state(volatile unsigned char*, pin_state, uint8_t);
+ */
+// bool pin_set_state(volatile unsigned char*, pin_state, uint8_t);
 
-/**
+/*
  *
  * @brief: this function check the pin input, after set the pin direction to
  *         input, and pull-up resistor to on.
@@ -64,6 +64,6 @@ bool pin_set_state(volatile unsigned char*, pin_state, uint8_t);
  *
  * @return: this function return (true) or (false) depend on input pin state.
  *
- **/
-bool pull_check(digital_pin);
+ */
+// bool pull_check(digital_pin);
 #endif  // _GPIO_UNO_H_
