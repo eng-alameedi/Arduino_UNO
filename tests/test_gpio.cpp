@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 
+#include <cstdint>
+
 #include "Arduino_Uno.h"
 #include "gpio_real.h"
 #include "pin_map.h"
@@ -9,22 +11,28 @@ TEST(GPIOTest, Initialization) {
   GPIO_REAL gpio(PIN13, OUTPUT);
   ASSERT_EQ(gpio.get_pin(), PIN13);
   ASSERT_EQ(gpio.get_mode(), OUTPUT);
+  ASSERT_EQ(gpio.get_bit(), 5);
 }
 
 // Test case for setting and getting pin state
-TEST(GPIOTest, SetGetState) {
+TEST(GPIOTest, PinState) {
   GPIO_REAL gpio(PIN12, OUTPUT);
   ASSERT_EQ(gpio.get_state(), LOW);
   gpio.set_pinstate(HIGH);
   ASSERT_EQ(gpio.get_state(), HIGH);
+  ASSERT_EQ(gpio.get_bit(), 4);
 }
-TEST(GPIOTest, VarTest) {
+TEST(GPIOTest, PinMap) {
   ASSERT_EQ(static_cast<uint8_t>(PIN13), 13);
   ASSERT_EQ(static_cast<uint8_t>(OUTPUT), 1);
+  ASSERT_EQ(static_cast<uint8_t>(INPUT), 0);
+  ASSERT_EQ(static_cast<uint8_t>(LOW), 0);
+  ASSERT_EQ(static_cast<uint8_t>(HIGH), 1);
 }
 
-TEST(GPIOTest, PortTest) {
+TEST(GPIOTest, Pin11Test) {
   GPIO_REAL gpio(PIN11, OUTPUT);
+  ASSERT_EQ(gpio.get_bit(), 3);
   ASSERT_EQ(static_cast<int>(*(gpio.get_ddrx())), 8);
   ASSERT_EQ(static_cast<int>(*(gpio.get_portx())), 0);
   gpio.set_pinstate(HIGH);
@@ -33,6 +41,7 @@ TEST(GPIOTest, PortTest) {
 
 TEST(GPIOTest, PinRead) {
   GPIO_REAL gpio(PIN5, INPUT);
+  ASSERT_EQ(gpio.get_bit(), 5);
   ASSERT_EQ(gpio.get_pin(), PIN5);
   ASSERT_EQ(gpio.get_mode(), INPUT);
   gpio.set_pinstate(HIGH);
