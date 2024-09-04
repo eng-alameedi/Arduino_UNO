@@ -14,6 +14,9 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
   unsigned char a = 0;
   unsigned char b = 0;
   unsigned char c = 0;
+  unsigned char a1 = 0;
+  unsigned char b1 = 0;
+  unsigned char c1 = 0;
   if (pin >= 8) {
     //*DDRx = DDRB;
     //*PORTx = PORTB;
@@ -26,9 +29,9 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
     //*DDRx = DDRD;
     //*PORTx = PORTD;
     //*PINx = PIND;
-    DDRx = &a;
-    PORTx = &b;
-    PINx = &c;
+    DDRx = &a1;
+    PORTx = &b1;
+    PINx = &c1;
     bit = static_cast<uint8_t>(pin);
   }
 }
