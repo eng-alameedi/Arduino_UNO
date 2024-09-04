@@ -9,6 +9,7 @@
 #include "gpio_real.h"
 
 #include "gpio_init.h"
+#include "gpio_uno.h"
 #include "pin_map.h"
 
 GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) { set_pinmode(); }
@@ -27,11 +28,9 @@ void GPIO_REAL::set_pinstate(pin_state st) {
   if (st == HIGH) {
     *PORTx |= (HIGH << bit);
     state = st;
-  } else if (st == LOW) {
-    *PORTx &= (HIGH << bit);
-    state = st;
   } else {
-    error_count += 1;
+    *PORTx &= ~(HIGH << bit);
+    state = st;
   }
 }
 
