@@ -24,10 +24,10 @@ void GPIO_REAL::set_pinmode() {
 
 void GPIO_REAL::set_pinstate(pin_state st) {
   // if (!(pin_set_state(PORTx, st, bit))) error_count += 1;
-  if (st) {
+  if (st == HIGH) {
     *PORTx |= (HIGH << bit);
     state = st;
-  } else if (!st) {
+  } else if (st == LOW) {
     *PORTx &= (HIGH << bit);
     state = st;
   } else {
