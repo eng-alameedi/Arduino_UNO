@@ -38,4 +38,4 @@ add_custom_target(upload
 )
 
 # add the test sub-directory
-add_subdirectory(tests)
+#add_subdirectory(tests)

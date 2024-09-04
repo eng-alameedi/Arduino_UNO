@@ -31,13 +31,17 @@ class GPIO {
   digital_pin get_pin() const;
   pin_mode get_mode() const;
   pin_state get_state() const;
-  volatile unsigned char* get_ddrx() const;
-  volatile unsigned char* get_portx() const;
+  uint8_t get_bit() const;
+
+  unsigned char get_ddrx() const;
+  unsigned char get_portx() const;
+
+  virtual void set_pinstate(pin_state) = 0;
 
  protected:
   virtual void set_pinmode() = 0;  // set the pin mode (out,in)
 
-  virtual void set_pinstate(pin_state) = 0;  // set the pin state (low,high).
+  // virtual void set_pinstate(pin_state) = 0;  // set the pin state (low,high).
 
   virtual bool digital_pinread() = 0;  // read the pin state (0,1).
 };
