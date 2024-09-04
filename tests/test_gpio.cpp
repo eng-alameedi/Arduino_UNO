@@ -33,10 +33,10 @@ TEST(GPIOTest, PinMap) {
 TEST(GPIOTest, Pin11Test) {
   GPIO_REAL gpio(PIN11, OUTPUT);
   ASSERT_EQ(gpio.get_bit(), 3);
-  ASSERT_EQ(static_cast<int>(*(gpio.get_ddrx())), 8);
-  ASSERT_EQ(static_cast<int>(*(gpio.get_portx())), 0);
+  ASSERT_EQ(static_cast<int>((gpio.get_ddrx())), 8);
+  ASSERT_EQ(static_cast<int>((gpio.get_portx())), 0);
   gpio.set_pinstate(HIGH);
-  ASSERT_EQ(static_cast<int>(*(gpio.get_portx())), 8);
+  ASSERT_EQ(static_cast<int>((gpio.get_portx())), 8);
 }
 
 TEST(GPIOTest, PinRead) {
@@ -45,8 +45,8 @@ TEST(GPIOTest, PinRead) {
   ASSERT_EQ(gpio.get_pin(), PIN5);
   ASSERT_EQ(gpio.get_mode(), INPUT);
   gpio.set_pinstate(HIGH);
-  ASSERT_EQ(static_cast<int>(*(gpio.get_ddrx())), 0);
-  ASSERT_EQ(static_cast<int>(*(gpio.get_portx())), 32);
+  ASSERT_EQ(static_cast<int>((gpio.get_ddrx())), 0);
+  ASSERT_EQ(static_cast<int>((gpio.get_portx())), 32);
   ASSERT_EQ(gpio.digital_pinread(), false);
 }
 
