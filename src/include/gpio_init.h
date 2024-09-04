@@ -31,6 +31,8 @@ class GPIO {
   digital_pin get_pin() const;
   pin_mode get_mode() const;
   pin_state get_state() const;
+  uint8_t get_bit() const;
+
   volatile unsigned char* get_ddrx() const;
   volatile unsigned char* get_portx() const;
 
