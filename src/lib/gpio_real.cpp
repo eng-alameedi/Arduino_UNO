@@ -35,7 +35,7 @@ void GPIO_REAL::set_pinstate(pin_state st) {
   }
 }
 
-int GPIO_REAL::digital_pinread() {
-  // code here
-  return 0;
+bool GPIO_REAL::digital_pinread() {
+  if (!(*PINx & (HIGH << bit))) return false;
+  return true;
 }

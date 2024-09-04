@@ -39,7 +39,7 @@ class GPIO {
 
   virtual void set_pinstate(pin_state) = 0;  // set the pin state (low,high).
 
-  virtual int digital_pinread() = 0;  // read the pin state (0,1).
+  virtual bool digital_pinread() = 0;  // read the pin state (0,1).
 };
 
 #endif  // _GPIO_INIT_H_
