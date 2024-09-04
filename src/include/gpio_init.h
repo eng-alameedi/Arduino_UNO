@@ -33,8 +33,8 @@ class GPIO {
   pin_state get_state() const;
   uint8_t get_bit() const;
 
-  volatile unsigned char* get_ddrx() const;
-  volatile unsigned char* get_portx() const;
+  unsigned char get_ddrx() const;
+  unsigned char get_portx() const;
 
  protected:
   virtual void set_pinmode() = 0;  // set the pin mode (out,in)

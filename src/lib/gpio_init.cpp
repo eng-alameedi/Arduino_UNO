@@ -48,6 +48,6 @@ pin_state GPIO::get_state() const { return state; }
 
 uint8_t GPIO::get_bit() const { return bit; }
 
-volatile unsigned char* GPIO::get_ddrx() const { return DDRx; }
+unsigned char GPIO::get_ddrx() const { return *DDRx; }
 
-volatile unsigned char* GPIO::get_portx() const { return PORTx; }
+unsigned char GPIO::get_portx() const { return *PORTx; }
