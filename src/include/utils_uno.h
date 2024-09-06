@@ -9,14 +9,24 @@
 #ifndef _UTILS_UNO_H_
 #define _UTILS_UNO_H_
 
+/*
 #define PIN_MODE(number, mode) \
   pin_set_mode(number,         \
                mode)  // define a macro to call the function set_pin_mode
 #define PIN_STATE(number, state) \
   pin_set_state(number,          \
                 state)  // define a macro to call the function set_pin_state
-#define PIN_INIT(number, mode)  \
-  GPIO_REAL gp_##number(number, \
-                        mode)  // define a macro to initial the class GPIO
+*/
+
+// <<<<<<<<<<====================>>>>>>>>>> define a macro to initial the
+// GPIO_REAL class.
+#define PIN_INIT(number, mode) GPIO_REAL gp_##number(number, mode)
+
+// <<<<<<<<<<====================>>>>>>>>>> define a macro to set pin state
+// (high/low)
+#define PIN_STATE(number, mode) gp_##number.set_pinstate(mode)
+
+// <<<<<<<<<<====================>>>>>>>>>> define a macro to read a pin state
+#define PIN_READ(number) gp_##number.digital_pinread()
 
 #endif  // _UTILS_UNO_H_
