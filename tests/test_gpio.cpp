@@ -8,6 +8,7 @@ using ::testing::AtLeast;
 TEST(GPIOTest, ClassInit) {
   GPIO_MOCK g(PIN13, OUTPUT);
   EXPECT_CALL(g, set_pinmode()).Times(AtLeast(1));
+  g.set_pinmode();
 }
 
 /*

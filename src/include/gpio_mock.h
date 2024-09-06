@@ -15,8 +15,8 @@
 
 class GPIO_MOCK : public GPIO {
  public:
-  GPIO_MOCK() = default;
-  // ~GPIO_MOCK();
+  GPIO_MOCK(digital_pin pin, pin_mode mode) : GPIO(pin, mode) {}
+  virtual ~GPIO_MOCK() = default;
   MOCK_METHOD(void, set_pinmode, (), (override));
   MOCK_METHOD(void, set_pinstate, (pin_state), (override));
   MOCK_METHOD(bool, digital_pinread, (), (override));
