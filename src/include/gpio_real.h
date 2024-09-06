@@ -15,7 +15,7 @@
 class GPIO_REAL : public GPIO {
  public:
   GPIO_REAL(digital_pin, pin_mode);
-  ~GPIO_REAL();
+  // ~GPIO_REAL();
 
   void set_pinstate(pin_state) override;
   bool digital_pinread() override;

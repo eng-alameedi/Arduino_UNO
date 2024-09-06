@@ -4,7 +4,7 @@ project(Arduino_UNO_Library
   LANGUAGES CXX
 )
 
-# set the executable filename
+# Set the executable filename
 set(file_name Arduino)
 
 # Specify the Arduino core directory (adjust path accordingly)
@@ -16,23 +16,27 @@ include_directories(${ARDUINO_CORE_PATH})
 # Add include directory for the library headers
 include_directories(${CMAKE_SOURCE_DIR}/src/include)
 
-# set the source file
+# Set the source files
 file(GLOB SOURCES src/main.cpp src/lib/*.cpp)
 
-# set options for compiler
+# Set options for the compiler
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 
-# add debug flag
+# Add debug flag
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
-# add executable file
+
+# Add the libra[<35;67;29Mry (create only once here)
+add_library(ArduinoLib STATIC ${SOURCES})
+
+# Create the executable file
 add_executable(${file_name} ${SOURCES})
 
-# Add source files
-add_library(ArduinoLib STATIC ${SOURCES})
+# Link the executable against the ArduinoLib
+target_link_libraries(${file_name} ArduinoLib)
 
 # Add examples
 add_subdirectory(examples)

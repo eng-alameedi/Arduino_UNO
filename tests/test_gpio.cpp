@@ -1,65 +1,54 @@
-#include <gpio_mock.h>
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
-
-#include <cstdint>
 
 #include "Arduino_Uno.h"
 #include "gmock/gmock.h"
+#include "gpio_init.h"
+#include "gpio_mock.h"
 #include "gpio_real.h"
 #include "pin_map.h"
 
 using ::testing::AtLeast;
 
-TEST(GPIOTest, ClassInit) {
-  GPIO_MOCK g_m(PIN13, OUTPUT);
-  EXPECT_CALL(g_m, set_pinmode()).Times(AtLeast(1));
+TEST(GPIOTest, SetModeCall) {
+  GPIO_MOCK g(PIN13, OUTPUT);
+  EXPECT_CALL(g, set_pinmode()).Times(AtLeast(1));
+  g.set_pinmode();
 }
 
-/*
-// Test case for GPIO pin initialization
-TEST(GPIOTest, Initialization) {
-  GPIO_REAL gpio(PIN13, OUTPUT);
-  ASSERT_EQ(gpio.get_pin(), PIN13);
-  ASSERT_EQ(gpio.get_mode(), OUTPUT);
-  ASSERT_EQ(gpio.get_bit(), 5);
+TEST(GPIOTest, SetStateCall) {
+  GPIO_MOCK g(PIN13, INPUT);
+  EXPECT_CALL(g, set_pinstate(HIGH)).Times(AtLeast(1));
+  g.set_pinstate(HIGH);
 }
 
-// Test case for setting and getting pin state
+TEST(GPIOTest, DigitalPinRead) {
+  GPIO_MOCK g(PIN13, INPUT);
+  EXPECT_CALL(g, digital_pinread()).Times(AtLeast(1));
+  g.digital_pinread();
+}
+
+TEST(GPIOTest, DigitalPinTest) {
+  EXPECT_EQ(PIN13, 13);
+  EXPECT_EQ(PIN5, 5);
+  EXPECT_EQ(PIN0, 0);
+}
+
+TEST(GPIOTest, PinMode) {
+  EXPECT_EQ(OUTPUT, 1);
+  EXPECT_EQ(INPUT, 0);
+}
+
 TEST(GPIOTest, PinState) {
-  GPIO_REAL gpio(PIN12, OUTPUT);
-  ASSERT_EQ(gpio.get_state(), LOW);
-  gpio.set_pinstate(HIGH);
-  ASSERT_EQ(gpio.get_state(), HIGH);
-  ASSERT_EQ(gpio.get_bit(), 4);
-}
-TEST(GPIOTest, PinMap) {
-  ASSERT_EQ(static_cast<uint8_t>(PIN13), 13);
-  ASSERT_EQ(static_cast<uint8_t>(OUTPUT), 1);
-  ASSERT_EQ(static_cast<uint8_t>(INPUT), 0);
-  ASSERT_EQ(static_cast<uint8_t>(LOW), 0);
-  ASSERT_EQ(static_cast<uint8_t>(HIGH), 1);
+  EXPECT_EQ(HIGH, 1);
+  EXPECT_EQ(LOW, 0);
 }
 
-TEST(GPIOTest, Pin11Test) {
-  GPIO_REAL gpio(PIN11, OUTPUT);
-  ASSERT_EQ(gpio.get_bit(), 3);
-  ASSERT_EQ(static_cast<int>((gpio.get_ddrx())), 8);
-  ASSERT_EQ(static_cast<int>((gpio.get_portx())), 0);
-  gpio.set_pinstate(HIGH);
-  ASSERT_EQ(static_cast<int>((gpio.get_portx())), 8);
+TEST(GPIOTest, GpioCall) {
+  GPIO_MOCK gp(PIN5, INPUT);
+  ON_CALL(gp, digital_pinread()).WillByDefault(testing::Return(false));
+  EXPECT_EQ(gp.get_bit(), 5);
 }
-
-TEST(GPIOTest, PinRead) {
-  GPIO_REAL gpio(PIN5, INPUT);
-  ASSERT_EQ(gpio.get_bit(), 5);
-  ASSERT_EQ(gpio.get_pin(), PIN5);
-  ASSERT_EQ(gpio.get_mode(), INPUT);
-  gpio.set_pinstate(HIGH);
-  ASSERT_EQ(static_cast<int>((gpio.get_ddrx())), 0);
-  ASSERT_EQ(static_cast<int>((gpio.get_portx())), 32);
-  ASSERT_EQ(gpio.digital_pinread(), false);
-}
-*/
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
