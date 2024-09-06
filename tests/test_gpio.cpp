@@ -1,18 +1,13 @@
-#include <gpio_mock.h>
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <cstdint>
-
 #include "Arduino_Uno.h"
-#include "gmock/gmock.h"
-#include "gpio_real.h"
-#include "pin_map.h"
 
 using ::testing::AtLeast;
 
 TEST(GPIOTest, ClassInit) {
-  GPIO_MOCK g_m(PIN13, OUTPUT);
-  EXPECT_CALL(g_m, set_pinmode()).Times(AtLeast(1));
+  GPIO_MOCK g(PIN13, OUTPUT);
+  EXPECT_CALL(g, set_pinmode()).Times(AtLeast(1));
 }
 
 /*

@@ -10,6 +10,7 @@
 #define _ARDUINO_UNO_H_
 
 #include "gpio_init.h"
+#include "gpio_mock.h"
 #include "gpio_real.h"
 #include "gpio_uno.h"
 #include "pin_map.h"

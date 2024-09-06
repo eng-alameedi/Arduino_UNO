@@ -23,11 +23,11 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
     bit = static_cast<uint8_t>(pin);
   }
 }
-
+/*
 GPIO::~GPIO() {
   // code here
 }
-
+*/
 digital_pin GPIO::get_pin() const { return pin; }
 
 pin_mode GPIO::get_mode() const { return mode; }
