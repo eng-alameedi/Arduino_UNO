@@ -3,7 +3,9 @@
 
 #include "Arduino_Uno.h"
 #include "gmock/gmock.h"
+#include "gpio_init.h"
 #include "gpio_mock.h"
+#include "gpio_real.h"
 #include "pin_map.h"
 
 using ::testing::AtLeast;
@@ -30,6 +32,22 @@ TEST(GPIOTest, DigitalPinTest) {
   EXPECT_EQ(PIN13, 13);
   EXPECT_EQ(PIN5, 5);
   EXPECT_EQ(PIN0, 0);
+}
+
+TEST(GPIOTest, PinMode) {
+  EXPECT_EQ(OUTPUT, 1);
+  EXPECT_EQ(INPUT, 0);
+}
+
+TEST(GPIOTest, PinState) {
+  EXPECT_EQ(HIGH, 1);
+  EXPECT_EQ(LOW, 0);
+}
+
+TEST(GPIOTest, GpioCall) {
+  GPIO_MOCK gp(PIN5, INPUT);
+  ON_CALL(gp, digital_pinread()).WillByDefault(testing::Return(false));
+  EXPECT_EQ(gp.get_bit(), 5);
 }
 
 int main(int argc, char **argv) {
