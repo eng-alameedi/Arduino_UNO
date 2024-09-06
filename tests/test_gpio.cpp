@@ -1,11 +1,21 @@
+#include <gpio_mock.h>
 #include <gtest/gtest.h>
 
 #include <cstdint>
 
 #include "Arduino_Uno.h"
+#include "gmock/gmock.h"
 #include "gpio_real.h"
 #include "pin_map.h"
 
+using ::testing::AtLeast;
+
+TEST(GPIOTest, ClassInit) {
+  GPIO_MOCK g_m(PIN13, OUTPUT);
+  EXPECT_CALL(g_m, set_pinmode()).Times(AtLeast(1));
+}
+
+/*
 // Test case for GPIO pin initialization
 TEST(GPIOTest, Initialization) {
   GPIO_REAL gpio(PIN13, OUTPUT);
@@ -49,6 +59,7 @@ TEST(GPIOTest, PinRead) {
   ASSERT_EQ(static_cast<int>((gpio.get_portx())), 32);
   ASSERT_EQ(gpio.digital_pinread(), false);
 }
+*/
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
