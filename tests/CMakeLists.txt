@@ -28,4 +28,4 @@ FetchContent_MakeAvailable(googletest)
 # Add unit tests
 enable_testing()
 add_executable(runTests test_gpio.cpp)
-target_link_libraries(runTests gtest gtest_main ArduinoLib)
+target_link_libraries(runTests gtest gtest_main gmock gmock_main ArduinoLib)
