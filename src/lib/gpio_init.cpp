@@ -36,6 +36,6 @@ pin_state GPIO::get_state() const { return state; }
 
 uint8_t GPIO::get_bit() const { return bit; }
 
-unsigned char GPIO::get_ddrx() const { return *DDRx; }
+uint8_t GPIO::get_ddrx() const { return *DDRx; }
 
-unsigned char GPIO::get_portx() const { return *PORTx; }
+uint8_t GPIO::get_portx() const { return *PORTx; }
