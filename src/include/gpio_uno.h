@@ -12,7 +12,6 @@
 
 #include <stdint.h>
 
-#ifdef __AVR__
 /**
  * @brief: this block of definition for the block (B) of ATmega328p register.
  *
@@ -52,22 +51,4 @@
 #define DDRD *((volatile uint8_t*)0x2A)
 #define PIND *((volatile uint8_t*)0x29)
 
-#else
-
-extern volatile uint8_t PORTB;
-extern volatile uint8_t DDRB;
-extern volatile uint8_t PINB;
-extern volatile uint8_t PORTD;
-extern volatile uint8_t DDRD;
-extern volatile uint8_t PIND;
-#endif
-
-#ifdef __x86_64__
-volatile uint8_t PORTB = 0;
-volatile uint8_t DDRB = 0;
-volatile uint8_t PINB = 0;
-volatile uint8_t PORTD = 0;
-volatile uint8_t DDRD = 0;
-volatile uint8_t PIND = 0;
-#endif
 #endif  // _GPIO_UNO_H_
