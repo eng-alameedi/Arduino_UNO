@@ -44,10 +44,16 @@ TEST(GPIOTest, PinState) {
   EXPECT_EQ(LOW, 0);
 }
 
-TEST(GPIOTest, GpioCall) {
+TEST(GPIOTest, GpioCall5) {
   GPIO_MOCK gp(PIN5, INPUT);
   ON_CALL(gp, digital_pinread()).WillByDefault(testing::Return(false));
   EXPECT_EQ(gp.get_bit(), 5);
+}
+
+TEST(GPIOTest, GpioCall13) {
+  GPIO_MOCK gp(PIN13, OUTPUT);
+  EXPECT_EQ(gp.get_bit(), 5);
+  EXPECT_EQ(gp.get_ddrx(), 36);
 }
 
 int main(int argc, char **argv) {
