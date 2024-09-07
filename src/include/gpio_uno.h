@@ -10,7 +10,7 @@
 #ifndef _GPIO_UNO_H_
 #define _GPIO_UNO_H_
 
-#include <stdlib.h>
+#include <stdint.h>
 
 /**
  * @brief: this block of definition for the block (B) of ATmega328p register.
