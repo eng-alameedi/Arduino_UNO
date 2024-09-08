@@ -20,6 +20,8 @@ class GPIO_REAL : public GPIO {
   void set_pinstate(pin_state) override;
   bool digital_pinread() override;
 
+  static void SignalHandler(int);
+
  protected:
   void set_pinmode() override;
   // void set_pinstate(pin_state) override;
