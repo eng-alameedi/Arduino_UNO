@@ -61,7 +61,7 @@ TEST(GPIOTest, GpioCall13) {
 
 TEST(GPIOTest, GpioNull) {
   GPIO_MOCK gp(PIN10, INPUT);
-  ON_CALL(gp, get_ddrx()).WillByDefault(Return(DDRB));
+  // ON_CALL(gp, get_ddrx()).WillByDefault(Return(DDRB));
 }
 
 int main(int argc, char **argv) {
