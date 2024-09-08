@@ -8,11 +8,17 @@
 
 #include "gpio_real.h"
 
+#include <csignal>
+#include <cstdlib>
+#include <iostream>
+
 #include "gpio_init.h"
-#include "gpio_uno.h"
 #include "pin_map.h"
 
-GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) { set_pinmode(); }
+GPIO_REAL::GPIO_REAL(digital_pin p, pin_mode m) : GPIO(p, m) {
+  std::signal(SIGSEGV, SignalHandler);
+  set_pinmode();
+}
 
 /*GPIO_REAL::~GPIO_REAL() {
   // code here
@@ -37,4 +43,11 @@ void GPIO_REAL::set_pinstate(pin_state st) {
 bool GPIO_REAL::digital_pinread() {
   if (!(*PINx & (HIGH << bit))) return false;
   return true;
+}
+
+void GPIO_REAL::SignalHandler(int signal) {
+  if (signal == SIGSEGV) {
+    std::cerr << "Error: Segmentation Fault Detected..." << std::endl;
+    std::exit(signal);
+  }
 }
