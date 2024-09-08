@@ -9,7 +9,9 @@
 #define _GPIO_MOCK_H_
 
 #include <gmock/gmock.h>
+#include <stdint.h>
 
+#include "gmock/gmock.h"
 #include "gpio_init.h"
 #include "pin_map.h"
 
@@ -20,6 +22,8 @@ class GPIO_MOCK : public GPIO {
   MOCK_METHOD(void, set_pinmode, (), (override));
   MOCK_METHOD(void, set_pinstate, (pin_state), (override));
   MOCK_METHOD(bool, digital_pinread, (), (override));
+
+  MOCK_METHOD(uint8_t, get_ddrx, (), (const));
 };
 
 #endif  // _GPIO_MOCK_H_
