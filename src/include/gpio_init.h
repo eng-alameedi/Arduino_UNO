@@ -15,17 +15,17 @@
 
 class GPIO {
  protected:
-  volatile uint8_t* DDRx;   // pointer that hold the address of DDR(B,C,D)
-                            // depend on pin number.
-  volatile uint8_t* PORTx;  // pointer that hold the address of
-                            // PORT(B,C,D) depend on pin number.
-  volatile uint8_t* PINx;   // pointer that hold the address of PIN(B,C,D)
-                            // depend on pin number.
-  uint8_t bit{};            // the correct bit of the pin selected.
-  digital_pin pin;          // enum define the pin number map.
-  pin_mode mode{INPUT};     // enum pin mode (OUT,IN).
-  pin_state state{LOW};     // enum pin state (HIGH,LOW).
-  int error_count{};        // error count when function not work properly.
+  volatile uint8_t* DDRx{nullptr};  // pointer that hold the address of
+                                    // DDR(B,C,D) depend on pin number.
+  volatile uint8_t* PORTx{nullptr};  // pointer that hold the address of
+                                     // PORT(B,C,D) depend on pin number.
+  volatile uint8_t* PINx{nullptr};   // pointer that hold the address of
+                                    // PIN(B,C,D) depend on pin number.
+  uint8_t bit{};         // the correct bit of the pin selected.
+  digital_pin pin;       // enum define the pin number map.
+  pin_mode mode{INPUT};  // enum pin mode (OUT,IN).
+  pin_state state{LOW};  // enum pin state (HIGH,LOW).
+  int error_count{};     // error count when function not work properly.
 
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
