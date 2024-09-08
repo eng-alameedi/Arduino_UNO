@@ -6,9 +6,11 @@
 #include "gpio_init.h"
 #include "gpio_mock.h"
 #include "gpio_real.h"
+#include "gpio_uno.h"
 #include "pin_map.h"
 
 using ::testing::AtLeast;
+using ::testing::Return;
 
 TEST(GPIOTest, SetModeCall) {
   GPIO_MOCK g(PIN13, OUTPUT);
@@ -53,7 +55,13 @@ TEST(GPIOTest, GpioCall5) {
 TEST(GPIOTest, GpioCall13) {
   GPIO_MOCK gp(PIN13, OUTPUT);
   EXPECT_EQ(gp.get_bit(), 5);
-  EXPECT_EQ(gp.get_ddrx(), 36);
+  EXPECT_EQ(gp.get_mode(), OUTPUT);
+  EXPECT_EQ(gp.get_state(), LOW);
+}
+
+TEST(GPIOTest, GpioNull) {
+  GPIO_MOCK gp(PIN10, INPUT);
+  ON_CALL(gp, get_ddrx()).WillByDefault(Return(DDRB));
 }
 
 int main(int argc, char **argv) {
