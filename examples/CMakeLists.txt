@@ -5,4 +5,12 @@ project(Arduino_UNO_Library
         LANGUAGES CXX
        )
 
-# build instruction
+set(file_name LED)
+set(files led_button_toggle/main.cpp led_button_toggle/setup.cpp)
+
+include_directories(/home/alameedi/Github/Arduino_UNO/src/include)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(${file_name} ${files})
