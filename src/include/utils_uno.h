@@ -29,4 +29,18 @@
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to read a pin state
 #define PIN_READ(number) gp_##number.digital_pinread()
 
+/**
+ *
+ * @brief: this function will setup the required pin parameter once such pin
+ *direction
+ *
+ **/
+void setup();
+
+/**
+ *
+ * @brief: this function well continue looping, user will put the pin parameter.
+ *
+ **/
+void loop();
 #endif  // _UTILS_UNO_H_
