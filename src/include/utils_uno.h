@@ -20,7 +20,7 @@
 
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to initial the
 // GPIO_REAL class.
-#define PIN_INIT(number, mode) GPIO_REAL gp_##number(number, mode)
+#define PIN_INIT(number, mode) (new GPIO_REAL gp_##number(number, mode))
 
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to set pin state
 // (high/low)
