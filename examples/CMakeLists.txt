@@ -13,7 +13,7 @@ include_directories(/home/alameedi/Github/Arduino_UNO/src/include)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_executable(${file_name} ${files})
+
 # Link the executable against the ArduinoLib
 target_link_libraries(${file_name} ArduinoLib)
-
-add_executable(${file_name} ${files})
