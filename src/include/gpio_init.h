@@ -1,9 +1,11 @@
 //
 // File: gpio_init.h
 //
-// this file contain the main gpio class,
-// that initiate the gpio (DDRx,PORTx,PINx),
-// depend on pin number.
+// this file contain the main gpio class definition
+// that initiate the gpio (DDRx,PORTx,PINx) depend
+// on pin number, also contain pure virtual method
+// that can overridden by other classes like the
+// class GPIO_REAL, and GPIO_MOCK class.
 //
 
 #ifndef _GPIO_INIT_H_
@@ -15,38 +17,45 @@
 
 class GPIO {
  protected:
-  volatile uint8_t* DDRx{nullptr};  // pointer that hold the address of
-                                    // DDR(B,C,D) depend on pin number.
-  volatile uint8_t* PORTx{nullptr};  // pointer that hold the address of
-                                     // PORT(B,C,D) depend on pin number.
-  volatile uint8_t* PINx{nullptr};   // pointer that hold the address of
-                                    // PIN(B,C,D) depend on pin number.
-  uint8_t bit{};         // the correct bit of the pin selected.
-  digital_pin pin;       // enum define the pin number map.
+  volatile uint8_t* DDRx{nullptr};  // Pointer that point to DDR (B,C,D)
+
+  volatile uint8_t* PORTx{nullptr};  // Pointer that point to PORT (B,C,D)
+
+  volatile uint8_t* PINx{nullptr};  // Pointer that point to PIN (B,C,D)
+
+  virtual void set_pinstate(pin_state) = 0;  // Set pin state (high/low)
+
+  virtual void set_pinmode() = 0;  // set the pin mode (out,in)
+
+  virtual bool digital_pinread() = 0;  // read the pin state (0,1).
+
+  uint8_t bit{};  // the correct bit of the selected pin
+
+  digital_pin pin;  // enum define the pin number map.
+
   pin_mode mode{INPUT};  // enum pin mode (OUT,IN).
+
   pin_state state{LOW};  // enum pin state (HIGH,LOW).
-  int error_count{};     // error count when function not work properly.
+
+  int error_count{};  // error count when function not work properly.
 
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
   virtual ~GPIO() = default;    // GPIO class destructor.
 
-  digital_pin get_pin() const;
-  pin_mode get_mode() const;
-  pin_state get_state() const;
-  uint8_t get_bit() const;
+  digital_pin get_pin() const;  // method return digital pin
 
-  uint8_t get_ddrx() const;
-  uint8_t get_portx() const;
+  pin_mode get_mode() const;  // method return mode (out/in)
 
-  virtual void set_pinstate(pin_state) = 0;
+  pin_state get_state() const;  // method return state (high/low)
 
- protected:
-  virtual void set_pinmode() = 0;  // set the pin mode (out,in)
+  uint8_t get_bit() const;  // method return bit number
 
-  // virtual void set_pinstate(pin_state) = 0;  // set the pin state (low,high).
+  uint8_t get_ddrx() const;  // method return the value of DDR
 
-  virtual bool digital_pinread() = 0;  // read the pin state (0,1).
+  uint8_t get_portx() const;  // method return the value of PORT
+
+  uint8_t get_pinx() const;  // method return the value of PIN
 };
 
 #endif  // _GPIO_INIT_H_
