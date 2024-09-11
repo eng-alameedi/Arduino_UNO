@@ -59,6 +59,14 @@
 #define TIMSK2 *((volatile uint8_t*)0x70)  // define of Timer/Counter0 Interrupt Mask Register
 #define TIFR2 *((volatile uint8_t*)0x37)   // define of Timer/Counter0 0 Interrupt Flag Register
 
+/**
+ *
+ * @brief: define the global interrupt register SREG for the ATmega328p
+ * and config the 7th bit which (I).
+ *
+ **/
+#define SREG *((volatile uint8_t*)0x3F)  // define the global interrupt register (I) is the 7th bit.
+
 //<<<<<<<<<<<<<<<<<<<<<<<<=============================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 /**
