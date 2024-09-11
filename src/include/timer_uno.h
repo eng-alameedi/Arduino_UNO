@@ -59,6 +59,37 @@
 #define TIMSK2 *((volatile uint8_t*)0x70)  // define of Timer/Counter0 Interrupt Mask Register
 #define TIFR2 *((volatile uint8_t*)0x37)   // define of Timer/Counter0 0 Interrupt Flag Register
 
+//<<<<<<<<<<<<<<<<<<<<<<<<=============================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+/**
+ *
+ * @brief: this abstract class timer definition that
+ * will overridden by timer0, timer1, and timer2 class
+ *
+ **/
+class Timer {
+ public:
+  Timer();
+  virtual ~Timer() = 0;
+
+  virtual void count_setup() = 0;
+  virtual void count() = 0;
+
+  virtual void ctc_setup() = 0;
+  virtual void delay(uint8_t) = 0;
+
+  virtual void pwm_setup() = 0;
+  virtual void pwm() = 0;
+
+  virtual bool is_active() = 0;
+  virtual void irq_run() = 0;
+
+ private:
+  uint8_t WGM00{0};
+  uint8_t WGM01{1};
+  uint8_t WGM02{3};
+  bool active{false};
+};
 void timer_ctc_setup();
 
 void delay(unsigned int);
