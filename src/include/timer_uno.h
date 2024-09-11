@@ -59,6 +59,45 @@
 #define TIMSK2 *((volatile uint8_t*)0x70)  // define of Timer/Counter0 Interrupt Mask Register
 #define TIFR2 *((volatile uint8_t*)0x37)   // define of Timer/Counter0 0 Interrupt Flag Register
 
+/**
+ *
+ * @brief: define the global interrupt register SREG for the ATmega328p
+ * and config the 7th bit which (I).
+ *
+ **/
+#define SREG *((volatile uint8_t*)0x3F)  // define the global interrupt register (I) is the 7th bit.
+
+//<<<<<<<<<<<<<<<<<<<<<<<<=============================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+/**
+ *
+ * @brief: this abstract class timer definition that
+ * will overridden by timer0, timer1, and timer2 class
+ *
+ **/
+class Timer {
+ public:
+  Timer();
+  virtual ~Timer() = 0;
+
+  virtual void count_setup() = 0;
+  virtual void count() = 0;
+
+  virtual void ctc_setup() = 0;
+  virtual void delay(uint8_t) = 0;
+
+  virtual void pwm_setup() = 0;
+  virtual void pwm() = 0;
+
+  virtual bool is_active() = 0;
+  virtual void irq_run() = 0;
+
+ protected:
+  int counter{};
+
+ private:
+  bool active{false};
+};
 void timer_ctc_setup();
 
 void delay(unsigned int);
