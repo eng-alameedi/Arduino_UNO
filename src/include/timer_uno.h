@@ -93,6 +93,13 @@ class Timer {
   uint8_t CS01{1};
   uint8_t CS02{2};
 
+  uint8_t TOIE0{0};
+  uint8_t OCIE0A{1};
+  uint8_t OCIE0B{2};
+
+  uint8_t TOV0{0};
+  uint8_t OCF0A{1};
+  uint8_t OCF0B{2};
   bool active{false};
 };
 void timer_ctc_setup();
