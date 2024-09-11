@@ -10,6 +10,14 @@
 #include "pin_map.h"
 #include "timer_uno.h"
 
+void sei() {
+  SREG |= (1 << 7);  // enable the global interrupts
+}
+
+void cli() {
+  SREG &= ~(1 << 7);  // disable the global interrupts
+}
+
 Timer0::Timer0() : Timer() {}
 
 void Timer0::count_setup() {

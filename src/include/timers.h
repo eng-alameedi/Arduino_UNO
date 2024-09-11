@@ -29,6 +29,14 @@
 
 #include "timer_uno.h"
 
+void cli();
+void sei();
+/*
+extern "C" void __vector_16(void) __attribute__((signal));
+void __vector_16(void) {
+  // do what you want, when interrupt occur.
+  }*/
+
 class Timer0 : public Timer {
  public:
   Timer0();
