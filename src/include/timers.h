@@ -9,6 +9,22 @@
 #ifndef _TIMERS_H_
 #define _TIMERS_H_
 
+#define WGM00 (0)
+#define WGM01 (1)
+#define WGM02 (3)
+
+#define CS00 (0)
+#define CS01 (1)
+#define CS02 (2)
+
+#define TOIE0 (0)
+#define OCIE0A (1)
+#define OCIE0B (2)
+
+#define TOV0 (0)
+#define OCF0A (1)
+#define OCF0B (2)
+
 #include <stdint.h>
 
 #include "timer_uno.h"

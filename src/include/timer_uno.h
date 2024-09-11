@@ -85,21 +85,6 @@ class Timer {
   virtual void irq_run() = 0;
 
  private:
-  uint8_t WGM00{0};
-  uint8_t WGM01{1};
-  uint8_t WGM02{3};
-
-  uint8_t CS00{0};
-  uint8_t CS01{1};
-  uint8_t CS02{2};
-
-  uint8_t TOIE0{0};
-  uint8_t OCIE0A{1};
-  uint8_t OCIE0B{2};
-
-  uint8_t TOV0{0};
-  uint8_t OCF0A{1};
-  uint8_t OCF0B{2};
   bool active{false};
 };
 void timer_ctc_setup();
