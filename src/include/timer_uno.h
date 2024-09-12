@@ -84,7 +84,7 @@ class Timer {
   virtual void count() = 0;
 
   virtual void ctc_setup() = 0;
-  virtual void delay(uint8_t) = 0;
+  virtual void delay(unsigned int) = 0;
 
   virtual void pwm_setup() = 0;
   virtual void pwm() = 0;

@@ -9,6 +9,7 @@
 #ifndef _TIMERS_H_
 #define _TIMERS_H_
 
+#include <cstdint>
 #define WGM00 (0)
 #define WGM01 (1)
 #define WGM02 (3)
@@ -42,6 +43,9 @@ class Timer0 : public Timer {
   Timer0();
   void count_setup() override;
   void count() override;
+
+  void ctc_setup() override;
+  void delay(unsigned int) override;
 };
 
 class Timer1 : public Timer {

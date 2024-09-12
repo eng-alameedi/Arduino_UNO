@@ -46,3 +46,26 @@ void Timer0::count() {
     }
   }
 }
+
+void Timer0::ctc_setup() {
+  cli();
+
+  TCCR0A |= (HIGH << WGM01);
+  TCCR0B = 0;
+  TCNT0 = 0;
+
+  TCCR0B |= (HIGH << CS00) | (HIGH << CS01);  // set the prescaler to 64 011
+  TIMSK0 |= (HIGH << OCIE0A);                 // enable the OCR0A compare
+  OCR0A = 249;                                // (250-1), set the compare register for 1ms per 1000hz of cpu clock
+
+  sei();
+}
+
+void Timer0::delay(unsigned int ms) {
+  while (ms != 0) {
+    while (!(TIFR0 & (1 << TOV0))) {
+    };
+    TIFR0 |= (HIGH << TOV0);
+    ms--;
+  }
+}
