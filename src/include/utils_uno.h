@@ -31,6 +31,11 @@
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to read a pin state
 #define PIN_READ(number) gp_##number.digital_pinread()
 
+// <<<<<<<<<<====================>>>>>>>>>> define a macro to set the Timer0 class and active the count() method.
+#define COUNT()          \
+  Timer0 t##__COUNTER__; \
+  t##__COUNTER__.count();
+
 /**
  *
  * @brief: this function will setup the required pin parameter once such pin

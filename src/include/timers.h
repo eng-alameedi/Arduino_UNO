@@ -46,6 +46,8 @@ class Timer0 : public Timer {
 
   void ctc_setup() override;
   void delay(unsigned int) override;
+
+  bool is_active() override;
 };
 
 class Timer1 : public Timer {
