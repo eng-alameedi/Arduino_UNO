@@ -68,11 +68,18 @@ TEST(GPIOTest, PinState) {
 
 TEST(TIMERMock, CountTest) {
   TIMER_MOCK t1;
-  EXPECT_CALL(t1, count_setup());
+  EXPECT_CALL(t1, count_setup()).Times(AtLeast(1));
+  EXPECT_CALL(t1, count()).Times(AtLeast(1));
+  t1.count_setup();
+  t1.count();
 }
 
 TEST(TIMERMock, DelayTest) {
-  // code here
+  TIMER_MOCK t1;
+  EXPECT_CALL(t1, ctc_setup()).Times(AtLeast(1));
+  EXPECT_CALL(t1, delay(1000)).Times(AtLeast(1));
+  t1.ctc_setup();
+  t1.delay(1000);
 }
 
 int main(int argc, char **argv) {
