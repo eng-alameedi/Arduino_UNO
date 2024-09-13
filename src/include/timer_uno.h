@@ -78,7 +78,7 @@
 class Timer {
  public:
   Timer();
-  virtual ~Timer() = 0;
+  virtual ~Timer() = default;
 
   virtual void count_setup() = 0;
   virtual void count() = 0;
@@ -86,11 +86,11 @@ class Timer {
   virtual void ctc_setup() = 0;
   virtual void delay(unsigned int) = 0;
 
-  virtual void pwm_setup() = 0;
-  virtual void pwm() = 0;
+  // virtual void pwm_setup() = 0;
+  // virtual void pwm() = 0;
 
-  virtual bool is_active() = 0;
-  virtual void irq_run() = 0;
+  // virtual bool is_active() = 0;
+  // virtual void irq_run() = 0;
 
  protected:
   int counter{};
