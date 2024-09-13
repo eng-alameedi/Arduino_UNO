@@ -8,3 +8,5 @@
 #include "timer_uno.h"
 
 Timer::Timer() : active(false) {}
+
+bool Timer::get_active() const { return active; }

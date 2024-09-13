@@ -92,6 +92,8 @@ class Timer {
   virtual bool is_active() = 0;
   // virtual void irq_run() = 0;
 
+  bool get_active() const;
+
  protected:
   int counter{};
 
