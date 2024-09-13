@@ -10,6 +10,7 @@
 
 #include <gmock/gmock.h>
 
+#include "gmock/gmock.h"
 #include "timer_uno.h"
 
 class TIMER_MOCK : public Timer {
@@ -21,6 +22,7 @@ class TIMER_MOCK : public Timer {
   MOCK_METHOD(void, count, (), (override));
   MOCK_METHOD(void, ctc_setup, (), (override));
   MOCK_METHOD(void, delay, (unsigned int), (override));
+  MOCK_METHOD(bool, is_active, (), (override));
 };
 
 #endif  // _TIMER_MOCK_H_

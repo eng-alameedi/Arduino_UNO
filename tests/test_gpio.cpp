@@ -82,6 +82,13 @@ TEST(TIMERMock, DelayTest) {
   t1.delay(1000);
 }
 
+TEST(TIMERMock, ActiveTest) {
+  TIMER_MOCK t1;
+  EXPECT_CALL(t1, is_active()).Times(AtLeast(1));
+  ON_CALL(t1, is_active()).WillByDefault(Return(false));
+  t1.is_active();
+}
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
