@@ -25,5 +25,4 @@ class GPIO_MOCK : public GPIO {
 
   MOCK_METHOD(uint8_t, get_ddrx, (), (const));
 };
-
 #endif  // _GPIO_MOCK_H_
