@@ -7,4 +7,4 @@
 
 #include "timer_uno.h"
 
-Timer::Timer() : active(true) {}
+Timer::Timer() : active(false) {}
