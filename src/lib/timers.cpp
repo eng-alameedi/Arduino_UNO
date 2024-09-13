@@ -69,3 +69,8 @@ void Timer0::delay(unsigned int ms) {
     ms--;
   }
 }
+
+bool Timer0::is_active() {
+  if (get_active()) return true;
+  return false;
+}
