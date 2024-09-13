@@ -89,7 +89,7 @@ class Timer {
   // virtual void pwm_setup() = 0;
   // virtual void pwm() = 0;
 
-  // virtual bool is_active() = 0;
+  virtual bool is_active() = 0;
   // virtual void irq_run() = 0;
 
  protected:
