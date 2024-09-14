@@ -95,6 +95,9 @@ class Timer {
   bool get_active() const;
   bool get_run() const;
 
+  void set_active(bool);
+  void set_run(bool);
+
  protected:
   int counter{};
 
