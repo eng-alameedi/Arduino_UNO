@@ -36,6 +36,11 @@
   Timer0 t##__COUNTER__; \
   t##__COUNTER__.count();
 
+// <<<<<<<<<<====================>>>>>>>>>> define a macro to set the Timer0 class and active the count() method.
+#define DELAY(ms)        \
+  Timer0 t##__COUNTER__; \
+  t##__COUNTER__.delay(ms);
+
 /**
  *
  * @brief: this function will setup the required pin parameter once such pin

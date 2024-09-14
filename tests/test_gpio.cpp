@@ -89,6 +89,22 @@ TEST(TIMERMock, ActiveTest) {
   t1.is_active();
 }
 
+TEST(TIMERMock, SetActiveTest) {
+  TIMER_MOCK t1;
+  EXPECT_CALL(t1, set_active(true)).Times(AtLeast(1));
+  t1.set_active(true);
+  EXPECT_CALL(t1, get_active()).WillOnce(Return(true));
+  t1.get_active();
+}
+
+TEST(TIMERMock, SetRunTest) {
+  TIMER_MOCK t1;
+  EXPECT_CALL(t1, set_run(true)).Times(AtLeast(1));
+  t1.set_run(true);
+  EXPECT_CALL(t1, get_run()).WillOnce(Return(true));
+  t1.get_run();
+}
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

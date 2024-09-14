@@ -93,12 +93,17 @@ class Timer {
   // virtual void irq_run() = 0;
 
   bool get_active() const;
+  bool get_run() const;
+
+  void set_active(bool);
+  void set_run(bool);
 
  protected:
   int counter{};
 
  private:
   bool active{false};
+  bool run{false};
 };
 void timer_ctc_setup();
 

@@ -26,18 +26,25 @@ Timer0::Timer0() : Timer() {}
 void Timer0::count_setup() {
   cli();  // disable the global interrupts during the timer configuration.
 
-  TCCR0A = 0;
-  TCCR0B = 0;
-  TCNT0 = 0;
+  if (!get_active()) {
+    TCCR0A = 0;
+    TCCR0B = 0;
+    TCNT0 = 0;
 
-  TCCR0B |= (HIGH << CS02) | (HIGH << CS00);  // set the prescaler to 1024 101
-  TIMSK0 |= (HIGH << TOIE0);                  // enable timer overflow interrupt
+    TCCR0B |= (HIGH << CS02) | (HIGH << CS00);  // set the prescaler to 1024 101
+    TIMSK0 |= (HIGH << TOIE0);                  // enable timer overflow interrupt
 
+    set_active(true);
+    set_run(true);
+  }
   sei();  // enable the global interrupts after completing the timer configuration.
 }
 
 void Timer0::count() {
   bool loop_condition{true};
+  if (!get_run()) {
+    count_setup();
+  }
   while (loop_condition) {
     if (TIFR0 & (1 << TOV0)) {
       counter++;
@@ -50,18 +57,25 @@ void Timer0::count() {
 void Timer0::ctc_setup() {
   cli();
 
-  TCCR0A |= (HIGH << WGM01);
-  TCCR0B = 0;
-  TCNT0 = 0;
+  if (!get_active()) {
+    TCCR0A |= (HIGH << WGM01);
+    TCCR0B = 0;
+    TCNT0 = 0;
 
-  TCCR0B |= (HIGH << CS00) | (HIGH << CS01);  // set the prescaler to 64 011
-  TIMSK0 |= (HIGH << OCIE0A);                 // enable the OCR0A compare
-  OCR0A = 249;                                // (250-1), set the compare register for 1ms per 1000hz of cpu clock
+    TCCR0B |= (HIGH << CS00) | (HIGH << CS01);  // set the prescaler to 64 011
+    TIMSK0 |= (HIGH << OCIE0A);                 // enable the OCR0A compare
+    OCR0A = 249;                                // (250-1), set the compare register for 1ms per 1000hz of cpu clock
 
+    set_active(true);
+    set_run(true);
+  }
   sei();
 }
 
 void Timer0::delay(unsigned int ms) {
+  if (!get_run()) {
+    ctc_setup();
+  }
   while (ms != 0) {
     while (!(TIFR0 & (1 << TOV0))) {
     };

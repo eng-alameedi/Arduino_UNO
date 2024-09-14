@@ -23,6 +23,10 @@ class TIMER_MOCK : public Timer {
   MOCK_METHOD(void, ctc_setup, (), (override));
   MOCK_METHOD(void, delay, (unsigned int), (override));
   MOCK_METHOD(bool, is_active, (), (override));
+  MOCK_METHOD(bool, get_active, (), (const));
+  MOCK_METHOD(bool, get_run, (), (const));
+  MOCK_METHOD(void, set_active, (bool), ());
+  MOCK_METHOD(void, set_run, (bool), ());
 };
 
 #endif  // _TIMER_MOCK_H_
