@@ -7,6 +7,8 @@
 
 #include "timer_uno.h"
 
-Timer::Timer() : active(false) {}
+Timer::Timer() : active(false), run(false) {}
 
 bool Timer::get_active() const { return active; }
+
+bool Timer::get_run() const { return run; }
