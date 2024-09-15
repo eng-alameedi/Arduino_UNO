@@ -105,8 +105,5 @@ class Timer {
   bool active{false};
   bool run{false};
 };
-void timer_ctc_setup();
-
-void delay(unsigned int);
 
 #endif  // _TIMER_UNO_H_
