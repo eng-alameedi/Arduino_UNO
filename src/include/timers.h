@@ -9,7 +9,6 @@
 #ifndef _TIMERS_H_
 #define _TIMERS_H_
 
-#include <cstdint>
 #define WGM00 (0)
 #define WGM01 (1)
 #define WGM02 (3)
