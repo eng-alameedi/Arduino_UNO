@@ -14,7 +14,9 @@
 #include "gpio_real.h"
 #include "gpio_uno.h"
 #include "pin_map.h"
+#include "timer_mock.h"
 #include "timer_uno.h"
+#include "timers.h"
 #include "utils_uno.h"
 
 #endif  // _ARDUINO_UNO_H_
