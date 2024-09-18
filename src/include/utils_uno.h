@@ -41,6 +41,10 @@
   Timer0 t##__COUNTER__; \
   t##__COUNTER__.delay(ms);
 
+#define _SFR(mem_addr) _MIMO(mem_addr)
+
+#define _MIMO(mem_addr) (*(volatile uint8_t*)(mem_addr))
+
 /**
  *
  * @brief: this function will setup the required pin parameter once such pin
