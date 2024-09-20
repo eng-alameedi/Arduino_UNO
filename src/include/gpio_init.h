@@ -41,7 +41,7 @@ class GPIO {
 
  public:
   GPIO(digital_pin, pin_mode);  // GPIO class constructor.
-  virtual ~GPIO() = default;    // GPIO class destructor.
+  virtual ~GPIO() = 0;          // GPIO class destructor.
 
   digital_pin get_pin() const;  // method return digital pin
 

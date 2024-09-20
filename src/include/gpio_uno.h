@@ -34,9 +34,9 @@
  *
  * @PINB: this the pin (c) register which read the input digital signal to pin.
  **/
-#define PORTC *((volatile uint8_t*)0x28)
-#define DDRC *((volatile uint8_t*)0x27)
-#define PINC *((volatile uint8_t*)0x26)
+#define PORTC (0x28)
+#define DDRC (0x27)
+#define PINC (0x26)
 
 /**
  * @brief: this block of definition for the block (B) of ATmega328p register.
@@ -47,8 +47,8 @@
  *
  * @PINB: this the pin (d) register which read the input digital signal to pin.
  **/
-#define PORTD *((volatile uint8_t*)0x2B)
-#define DDRD *((volatile uint8_t*)0x2A)
-#define PIND *((volatile uint8_t*)0x29)
+#define PORTD (0x2B)
+#define DDRD (0x2A)
+#define PIND (0x29)
 
 #endif  // _GPIO_UNO_H_
