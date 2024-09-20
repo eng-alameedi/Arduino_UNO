@@ -9,6 +9,7 @@
 #ifndef _UTILS_UNO_H_
 #define _UTILS_UNO_H_
 
+#include <stdint.h>
 /*
 #define PIN_MODE(number, mode) \
   pin_set_mode(number,         \
@@ -40,10 +41,13 @@
 #define DELAY(ms)        \
   Timer0 t##__COUNTER__; \
   t##__COUNTER__.delay(ms);
-
+/*
 #define _SFR(mem_addr) _MIMO(mem_addr)
 
 #define _MIMO(mem_addr) (*(volatile uint8_t*)(mem_addr))
+*/
+
+#define MRF(reg_addr) ((volatile uint8_t*)(reg_addr))  // simple memory register function
 
 /**
  *
