@@ -15,7 +15,7 @@
 class GPIO_REAL : public GPIO {
  public:
   GPIO_REAL(digital_pin, pin_mode);
-  // ~GPIO_REAL();
+  virtual ~GPIO_REAL() noexcept;
 
   void set_pinstate(pin_state) override;  // set pin state overridden method
 

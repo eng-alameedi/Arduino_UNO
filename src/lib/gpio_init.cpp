@@ -18,17 +18,17 @@ GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
     PINx = MRF(PINB);
     bit = static_cast<uint8_t>(pin) - 8;
   } else {
-    DDRx = &DDRD;
-    PORTx = &PORTD;
-    PINx = &PIND;
+    DDRx = MRF(DDRD);
+    PORTx = MRF(PORTD);
+    PINx = MRF(PIND);
     bit = static_cast<uint8_t>(pin);
   }
 }
-/*
+
 GPIO::~GPIO() {
   // code here
 }
-*/
+
 digital_pin GPIO::get_pin() const { return pin; }
 
 pin_mode GPIO::get_mode() const { return mode; }
