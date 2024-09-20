@@ -11,8 +11,8 @@ GPIO_REAL* gp;
 
 void setup() {
   // code here
-  PIN_INIT(PIN10, OUTPUT);
-  PIN_INIT(PIN13, INPUT);
+  PIN_INIT(PIN13, OUTPUT);
+  PIN_INIT(PIN10, INPUT);
 }
 void loop() {
   // code here
