@@ -21,9 +21,9 @@
  *
  * @PINB: this the pin (b) register which read the input digital signal to pin.
  **/
-#define PORTB *((volatile uint8_t*)0x25)
-#define DDRB *((volatile uint8_t*)0x24)
-#define PINB *((volatile uint8_t*)0x23)
+#define PORTB (0x25)
+#define DDRB (0x24)
+#define PINB (0x23)
 
 /**
  * @brief: this block of definition for the block (C) of ATmega328p register.

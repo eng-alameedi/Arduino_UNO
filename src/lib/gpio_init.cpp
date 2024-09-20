@@ -9,12 +9,13 @@
 
 #include "gpio_uno.h"
 #include "pin_map.h"
+#include "utils_uno.h"
 
 GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
   if (pin >= 8) {
-    DDRx = &DDRB;
-    PORTx = &PORTB;
-    PINx = &PINB;
+    DDRx = MRF(DDRB);
+    PORTx = MRF(PORTB);
+    PINx = MRF(PINB);
     bit = static_cast<uint8_t>(pin) - 8;
   } else {
     DDRx = &DDRD;
