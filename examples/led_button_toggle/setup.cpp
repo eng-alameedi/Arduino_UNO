@@ -13,13 +13,14 @@
 
 // GPIO_REAL gp(PIN13, OUTPUT);
 
-void setup() {
-  GPIO_REAL gp(PIN13, OUTPUT);
+inline void setup() {
+  gp = new GPIO_REAL(PIN13, OUTPUT);
+  GPIO_REAL gp2(PIN12, INPUT);
   // code here
   // PIN_INIT(PIN13, OUTPUT);
   // PIN_INIT(PIN10, INPUT);
 }
-void loop() {
+inline void loop() {
   // code here
   // PIN_STATE(PIN10, HIGH);
   // PIN_STATE(PIN13, LOW);

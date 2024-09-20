@@ -11,6 +11,8 @@
 
 #include <stdint.h>
 
+#include "gpio_real.h"
+
 // #define PIN_MODE(number, mode) pin_set_mode(number,mode)  // define a macro to call the function set_pin_mode
 // #define PIN_STATE(number, state) pin_set_state(number,state)  // define a macro to call the function set_pin_state
 
@@ -44,6 +46,7 @@
 
 #define MRF(reg_addr) ((volatile uint8_t*)(reg_addr))  // simple memory register function
 
+extern GPIO_REAL* gp;
 /**
  *
  * @brief: this function will setup the required pin parameter once such pin
