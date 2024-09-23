@@ -5,23 +5,24 @@
 // that test and implement the GPIO_REAL.
 //
 
-#include "Arduino_Uno.h"
-#include "gpio_real.h"
-#include "pin_map.h"
+#include "Arduino_test.h"
 
 // GPIO_REAL* gp;
 
 // GPIO_REAL gp(PIN13, OUTPUT);
+PIN_INIT(PIN13, OUTPUT);
+PIN_INIT(PIN12, INPUT);
 
-inline void setup() {
-  gp = new GPIO_REAL(PIN13, OUTPUT);
-  GPIO_REAL gp2(PIN12, INPUT);
-  // code here
+void setup() {
   // PIN_INIT(PIN13, OUTPUT);
-  // PIN_INIT(PIN10, INPUT);
+  // PIN_INIT(PIN12, INPUT);
+
+  PIN_STATE(PIN12, HIGH);
 }
-inline void loop() {
-  // code here
-  // PIN_STATE(PIN10, HIGH);
-  // PIN_STATE(PIN13, LOW);
+
+void loop() {
+  if (PIN_READ(PIN12))
+    PIN_STATE(PIN13, HIGH);
+  else
+    PIN_STATE(PIN13, LOW);
 }

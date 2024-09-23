@@ -78,7 +78,8 @@
 class Timer {
  public:
   Timer();
-  virtual ~Timer() = default;
+  // virtual ~Timer() = default;
+  ~Timer();
 
   virtual void count_setup() = 0;
   virtual void count() = 0;

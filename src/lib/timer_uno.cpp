@@ -9,6 +9,8 @@
 
 Timer::Timer() : active(false), run(false) {}
 
+Timer::~Timer() {}
+
 bool Timer::get_active() const { return active; }
 
 bool Timer::get_run() const { return run; }
