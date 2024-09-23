@@ -18,13 +18,13 @@
 
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to initial the
 // GPIO_REAL class.
-// #define PIN_INIT(number, mode) GPIO_REAL gp_##number(number, mode)
-#define PIN_INIT(number, mode) (gp = new GPIO_REAL(number, mode))
+#define PIN_INIT(number, mode) GPIO_REAL gp_##number(number, mode)
+// #define PIN_INIT(number, mode) (gp = new GPIO_REAL(number, mode))
 
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to set pin state
 // (high/low)
-// #define PIN_STATE(number, mode) gp_##number.set_pinstate(mode)
-#define PIN_STATE(number, state) gp->set_pinstate(state)
+#define PIN_STATE(number, mode) gp_##number.set_pinstate(mode)
+// #define PIN_STATE(number, state) gp->set_pinstate(state)
 
 // <<<<<<<<<<====================>>>>>>>>>> define a macro to read a pin state
 #define PIN_READ(number) gp_##number.digital_pinread()
@@ -46,7 +46,10 @@
 
 #define MRF(reg_addr) ((volatile uint8_t*)(reg_addr))  // simple memory register function
 
-extern GPIO_REAL* gp;
+// extern GPIO_REAL* gp;
+
+#define BitV(bit) (1 << bit)  // used for set the desire bit to high (1)
+
 /**
  *
  * @brief: this function will setup the required pin parameter once such pin
