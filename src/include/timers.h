@@ -40,6 +40,7 @@ void __vector_16(void) {
 class Timer0 : public Timer {
  public:
   Timer0();
+  ~Timer0();
   void count_setup() override;
   void count() override;
 

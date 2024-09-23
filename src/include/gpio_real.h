@@ -15,13 +15,14 @@
 class GPIO_REAL : public GPIO {
  public:
   GPIO_REAL(digital_pin, pin_mode);
-  virtual ~GPIO_REAL() noexcept;
+  // virtual ~GPIO_REAL() noexcept;
+  ~GPIO_REAL();
 
   void set_pinstate(pin_state) override;  // set pin state overridden method
 
   bool digital_pinread() override;  // digital pin read overridden method
 
-  static void SignalHandler(int);  // this method for OS signal handler
+  // static void SignalHandler(int);  // this method for OS signal handler
 
  protected:
   void set_pinmode() override;  // set pin mode overridden method

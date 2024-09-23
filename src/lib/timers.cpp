@@ -23,6 +23,8 @@ void cli() {
 //<<<<<<<<<<<<<<<<<<<<<<<<<================================>>>>>>>>>>>>>>>>>>>>>>>>>>
 Timer0::Timer0() : Timer() {}
 
+Timer0::~Timer0() {}
+
 void Timer0::count_setup() {
   cli();  // disable the global interrupts during the timer configuration.
 
