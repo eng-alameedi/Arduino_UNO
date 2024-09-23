@@ -5,19 +5,20 @@ project(Arduino_UNO_Library
 )
 
 # Set the executable filename
-set(file_name Arduino)
+#set(file_name Arduino)
 
 # Specify the Arduino core directory (adjust path accordingly)
-set(ARDUINO_CORE_PATH /home/alameedi/Github/Arduino_UNO)
+#set(ARDUINO_CORE_PATH /home/alameedi/Github/Arduino_UNO)
 
 # Include the Arduino core library
-include_directories(${ARDUINO_CORE_PATH})
+#include_directories(${ARDUINO_CORE_PATH})
 
 # Add include directory for the library headers
 include_directories(${CMAKE_SOURCE_DIR}/src/include)
 
 # Set the source files
 file(GLOB SOURCES src/main.cpp src/lib/*.cpp)
+#file(GLOB Lib_Source src/lib/*.cpp)
 
 # Set options for the compiler
 set(CMAKE_CXX_STANDARD 17)
@@ -33,10 +34,16 @@ endif()
 add_library(ArduinoLib STATIC ${SOURCES})
 
 # Create the executable file
-add_executable(${file_name} ${SOURCES})
+#add_executable(${file_name} ${SOURCES})
 
 # Link the executable against the ArduinoLib
-target_link_libraries(${file_name} ArduinoLib)
+#target_link_libraries(${file_name} ArduinoLib)
+
+#if(DEFINED CMAKE_TOOLCHAIN_FILE AND CMAKE_TOOLCHAIN_FILE MATCHES "avr-gcc-toolchain.cmake")
+#  add_library(ArduinoLib_AVR STATIC ${Lib_Source})
+#else()
+#  add_library(ArduinoLib STATIC ${Lib_Source})
+#endif()
 
 # Add examples
 add_subdirectory(examples)
