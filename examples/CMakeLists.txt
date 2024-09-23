@@ -46,3 +46,4 @@ add_library(ArduinoLib_AVR STATIC ${SOURCES})
 
 # add the test sub-directory
 add_subdirectory(led_button_toggle)
+add_subdirectory(led_toggle)

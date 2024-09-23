@@ -1,7 +1,7 @@
 
 include(${CMAKE_SOURCE_DIR}/avr-gcc-toolchain.cmake)
 
-set(file_name Led_Button_Toggle)
+set(file_name Led_Toggle)
 
 # Create the executable
 file(GLOB SOURCES
@@ -21,7 +21,7 @@ add_custom_command(TARGET ${file_name}.elf
 )
 
 # Upload command
-add_custom_target(upload1
+add_custom_target(upload2
   COMMAND avrdude -c arduino -p m328p -P /dev/ttyUSB0 -U flash:w:${file_name}.hex:i
   DEPENDS ${file_name}.hex
   COMMENT "Uploading HEX file to Arduino Uno"
