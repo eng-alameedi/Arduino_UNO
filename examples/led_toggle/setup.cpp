@@ -8,7 +8,6 @@
 #include "Arduino_test.h"
 
 PIN_INIT(PIN11, OUTPUT);
-T_INIT();
 
 void setup() {
   // code here
