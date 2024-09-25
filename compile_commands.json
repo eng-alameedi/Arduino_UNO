@@ -1,92 +1,86 @@
 [
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/Arduino.dir/src/lib/gpio_init.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
-  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
-  "output": "CMakeFiles/Arduino.dir/src/lib/gpio_init.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/Arduino.dir/src/lib/gpio_real.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
-  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
-  "output": "CMakeFiles/Arduino.dir/src/lib/gpio_real.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/Arduino.dir/src/lib/gpio_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
-  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
-  "output": "CMakeFiles/Arduino.dir/src/lib/gpio_uno.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/Arduino.dir/src/lib/timer_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
-  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
-  "output": "CMakeFiles/Arduino.dir/src/lib/timer_uno.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/Arduino.dir/src/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/main.cpp",
-  "file": "/home/alameedi/Github/Arduino_UNO/src/main.cpp",
-  "output": "CMakeFiles/Arduino.dir/src/main.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/gpio_init.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/gpio_init.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
   "output": "CMakeFiles/ArduinoLib.dir/src/lib/gpio_init.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/gpio_real.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/gpio_real.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
   "output": "CMakeFiles/ArduinoLib.dir/src/lib/gpio_real.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/gpio_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
-  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_uno.cpp",
-  "output": "CMakeFiles/ArduinoLib.dir/src/lib/gpio_uno.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/timer_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/timer_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
   "output": "CMakeFiles/ArduinoLib.dir/src/lib/timer_uno.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/Arduino_UNO/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/lib/timers.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timers.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/timers.cpp",
+  "output": "CMakeFiles/ArduinoLib.dir/src/lib/timers.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/ArduinoLib.dir/src/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/main.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/src/main.cpp",
   "output": "CMakeFiles/ArduinoLib.dir/src/main.cpp.o"
 },
 {
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=gnu++17 -o CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/gpio_init.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_init.cpp",
+  "output": "examples/CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/gpio_init.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=gnu++17 -o CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/gpio_real.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/gpio_real.cpp",
+  "output": "examples/CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/gpio_real.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=gnu++17 -o CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/timer_uno.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/timer_uno.cpp",
+  "output": "examples/CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/timer_uno.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=gnu++17 -o CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/timers.cpp.o -c /home/alameedi/Github/Arduino_UNO/src/lib/timers.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/src/lib/timers.cpp",
+  "output": "examples/CMakeFiles/ArduinoLib_AVR.dir/__/src/lib/timers.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples/led_button_toggle",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -g -std=gnu++17 -o CMakeFiles/Led_Button_Toggle.elf.dir/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/examples/led_button_toggle/main.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/examples/led_button_toggle/main.cpp",
+  "output": "examples/led_button_toggle/CMakeFiles/Led_Button_Toggle.elf.dir/main.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples/led_button_toggle",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -g -std=gnu++17 -o CMakeFiles/Led_Button_Toggle.elf.dir/setup.cpp.o -c /home/alameedi/Github/Arduino_UNO/examples/led_button_toggle/setup.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/examples/led_button_toggle/setup.cpp",
+  "output": "examples/led_button_toggle/CMakeFiles/Led_Button_Toggle.elf.dir/setup.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples/led_toggle",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -g -std=gnu++17 -o CMakeFiles/Led_Toggle.elf.dir/main.cpp.o -c /home/alameedi/Github/Arduino_UNO/examples/led_toggle/main.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/examples/led_toggle/main.cpp",
+  "output": "examples/led_toggle/CMakeFiles/Led_Toggle.elf.dir/main.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/Arduino_UNO/build/examples/led_toggle",
+  "command": "avr-g++  -I/home/alameedi/Github/Arduino_UNO/src/include  -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -fno-exceptions -fno-rtti -g -std=c++17 -mmcu=atmega328p -DF_CPU=16000000UL -g -std=gnu++17 -o CMakeFiles/Led_Toggle.elf.dir/setup.cpp.o -c /home/alameedi/Github/Arduino_UNO/examples/led_toggle/setup.cpp",
+  "file": "/home/alameedi/Github/Arduino_UNO/examples/led_toggle/setup.cpp",
+  "output": "examples/led_toggle/CMakeFiles/Led_Toggle.elf.dir/setup.cpp.o"
+},
+{
   "directory": "/home/alameedi/Github/Arduino_UNO/build/tests",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest -g -std=gnu++17 -o CMakeFiles/runTests.dir/test_gpio.cpp.o -c /home/alameedi/Github/Arduino_UNO/tests/test_gpio.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO/src/include -g -std=gnu++17 -o CMakeFiles/runTests.dir/test_gpio.cpp.o -c /home/alameedi/Github/Arduino_UNO/tests/test_gpio.cpp",
   "file": "/home/alameedi/Github/Arduino_UNO/tests/test_gpio.cpp",
   "output": "tests/CMakeFiles/runTests.dir/test_gpio.cpp.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -I/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock/include -I/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "file": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "file": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -I/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/include -I/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "file": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-},
-{
-  "directory": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/Arduino_UNO -I/home/alameedi/Github/Arduino_UNO/src/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/include -isystem /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest -g -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/src/gtest_main.cc",
-  "file": "/home/alameedi/Github/Arduino_UNO/build/_deps/googletest-src/googletest/src/gtest_main.cc",
-  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
 }
 ]
