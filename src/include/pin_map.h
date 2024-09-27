@@ -10,14 +10,8 @@
 
 #include <stdint.h>
 
-enum pin_mode : uint8_t {
-  INPUT = 0,
-  OUTPUT = 1
-};                                                      // define a pin mode as (output) or (input).
-enum pin_state : uint8_t {
-  LOW = 0,
-  HIGH = 1
-};                                                      // define a pin state voltage as (low) or (high).
+enum pin_mode : uint8_t { INPUT = 0, OUTPUT = 1 };  // define a pin mode as (output) or (input).
+enum pin_state : uint8_t { LOW = 0, HIGH = 1 };  // define a pin state voltage as (low) or (high).
 
 /**
  *
@@ -25,7 +19,7 @@ enum pin_state : uint8_t {
  *         its create a pin maps for digital pin (B, and D) to each bit in (8bit) integer type port.
  *
  **/
-enum digital_pin: uint8_t {
+enum digital_pin : uint8_t {
   PIN13 = 13,
   PIN12 = 12,
   PIN11 = 11,
@@ -41,4 +35,20 @@ enum digital_pin: uint8_t {
   PIN1 = 1,
   PIN0 = 0
 };
-#endif     // _PIN_MAP_H_
+
+/**
+ *
+ * @brief: define a structure for bits of PORTD, 8-bit for each pin
+ *
+ **/
+typedef struct {
+  uint8_t D0 : 1;
+  uint8_t D1 : 1;
+  uint8_t D2 : 1;
+  uint8_t D3 : 1;
+  uint8_t D4 : 1;
+  uint8_t D5 : 1;
+  uint8_t D6 : 1;
+  uint8_t D7 : 1;
+} pinD_bit;
+#endif  // _PIN_MAP_H_
