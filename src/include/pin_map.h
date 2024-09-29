@@ -11,7 +11,7 @@
 #include <stdint.h>
 
 enum pin_mode : uint8_t { INPUT = 0, OUTPUT = 1 };  // define a pin mode as (output) or (input).
-enum pin_state : uint8_t { LOW = 0, HIGH = 1 };  // define a pin state voltage as (low) or (high).
+enum pin_state : uint8_t { LOW = 0, HIGH = 1 };     // define a pin state voltage as (low) or (high).
 
 /**
  *
@@ -51,4 +51,21 @@ typedef struct {
   uint8_t D6 : 1;
   uint8_t D7 : 1;
 } pinD_bit;
+
+/**
+ *
+ * @brief: define a structure for bits of PORTB, 8-bit, bit for each pin
+ *
+ **/
+typedef struct {
+  uint8_t B0 : 1;
+  uint8_t B1 : 1;
+  uint8_t B2 : 1;
+  uint8_t B3 : 1;
+  uint8_t B4 : 1;
+  uint8_t B5 : 1;
+  uint8_t B6 : 1;
+  uint8_t B7 : 1;
+} pinB_bit;
+
 #endif  // _PIN_MAP_H_
