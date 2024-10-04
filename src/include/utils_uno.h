@@ -49,11 +49,11 @@
 #define _MIMO(mem_addr) (*(volatile uint8_t*)(mem_addr))
 */
 
-#define MRF(reg_addr) ((volatile uint8_t*)(reg_addr))  // simple memory register function
+#define _SFR(reg_addr) ((volatile uint8_t*)(reg_addr))  // simple memory register function
 
 // extern GPIO_REAL* gp;
 
-#define BitV(bit) (1 << bit)  // used for set the desire bit to high (1)
+#define _BV(bit) (1 << bit)  // used for set the desire bit to high (1)
 
 /**
  *

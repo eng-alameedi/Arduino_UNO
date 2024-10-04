@@ -9,6 +9,7 @@
 
 #include "pin_map.h"
 #include "timer_uno.h"
+#include "utils_uno.h"
 
 void sei() {
   SREG |= (1 << 7);  // enable the global interrupts
@@ -61,13 +62,13 @@ void Timer0::ctc_setup() {
 
   if (!get_active()) {
     TCCR0A = 0x00;
-    TCCR0A = (HIGH << WGM01);
+    TCCR0A = _BV(WGM01);
     TCCR0B = 0;
     TCNT0 = 0;
 
-    TCCR0B = (HIGH << CS01) | (HIGH << CS00);  // set the prescaler to 64 011
-    TIMSK0 |= (HIGH << OCIE0A);                // enable the OCR0A compare
-    OCR0A = 249;                               // (250-1), set the compare register for 1ms per 1000hz of cpu clock
+    TCCR0B = _BV(CS01) | _BV(CS00);  // set the prescaler to 64 011
+    TIMSK0 |= _BV(OCIE0A);           // enable the OCR0A compare
+    OCR0A = 249;                     // (250-1), set the compare register for 1ms per 1000hz of cpu clock
 
     set_active(true);
     set_run(true);

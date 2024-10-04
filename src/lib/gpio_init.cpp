@@ -13,14 +13,14 @@
 
 GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
   if (pin >= 8) {
-    DDRx = MRF(DDRB);
-    PORTx = MRF(PORTB);
-    PINx = MRF(PINB);
+    DDRx = _SFR(DDRB);
+    PORTx = _SFR(PORTB);
+    PINx = _SFR(PINB);
     bit = static_cast<uint8_t>(pin) - 8;
   } else {
-    DDRx = MRF(DDRD);
-    PORTx = MRF(PORTD);
-    PINx = MRF(PIND);
+    DDRx = _SFR(DDRD);
+    PORTx = _SFR(PORTD);
+    PINx = _SFR(PIND);
     bit = static_cast<uint8_t>(pin);
   }
 }
