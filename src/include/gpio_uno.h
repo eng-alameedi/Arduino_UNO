@@ -26,14 +26,14 @@
 #define DDRB (0x24)
 #define PINB (0x23)
 typedef struct {
-  uint8_t PB0 : 1;
-  uint8_t PB1 : 1;
-  uint8_t PB2 : 1;
-  uint8_t PB3 : 1;
-  uint8_t PB4 : 1;
-  uint8_t PB5 : 1;
-  uint8_t PB6 : 1;
-  uint8_t PB7 : 1;
+  uint8_t B0 : 1;
+  uint8_t B1 : 1;
+  uint8_t B2 : 1;
+  uint8_t B3 : 1;
+  uint8_t B4 : 1;
+  uint8_t B5 : 1;
+  uint8_t B6 : 1;
+  uint8_t B7 : 1;
 } port_B;
 
 /**
@@ -50,14 +50,14 @@ typedef struct {
 #define DDRC (0x27)
 #define PINC (0x26)
 typedef struct {
-  uint8_t PC0 : 1;
-  uint8_t PC1 : 1;
-  uint8_t PC2 : 1;
-  uint8_t PC3 : 1;
-  uint8_t PC4 : 1;
-  uint8_t PC5 : 1;
-  uint8_t PC6 : 1;
-  uint8_t PC7 : 1;
+  uint8_t C0 : 1;
+  uint8_t C1 : 1;
+  uint8_t C2 : 1;
+  uint8_t C3 : 1;
+  uint8_t C4 : 1;
+  uint8_t C5 : 1;
+  uint8_t C6 : 1;
+  uint8_t C7 : 1;
 } port_C;
 
 /**
@@ -74,14 +74,14 @@ typedef struct {
 #define DDRD (0x2A)
 #define PIND (0x29)
 typedef struct {
-  uint8_t PD0 : 1;
-  uint8_t PD1 : 1;
-  uint8_t PD2 : 1;
-  uint8_t PD3 : 1;
-  uint8_t PD4 : 1;
-  uint8_t PD5 : 1;
-  uint8_t PD6 : 1;
-  uint8_t PD7 : 1;
+  uint8_t D0 : 1;
+  uint8_t D1 : 1;
+  uint8_t D2 : 1;
+  uint8_t D3 : 1;
+  uint8_t D4 : 1;
+  uint8_t D5 : 1;
+  uint8_t D6 : 1;
+  uint8_t D7 : 1;
 } port_D;
 
 #endif  // _GPIO_UNO_H_
