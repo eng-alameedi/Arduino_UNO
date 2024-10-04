@@ -7,15 +7,15 @@
 
 #include "Arduino_test.h"
 
-PIN_INIT(PIN11, OUTPUT);
-
-void setup() {
-  // code here
-}
+PIN_INIT(PIN13, OUTPUT);
+Timer0 t1;
+void setup() { t1.ctc_setup(); }
 
 void loop() {
-  PIN_STATE(PIN11, HIGH);
-  DELAY(1000);
-  PIN_STATE(PIN11, LOW);
-  DELAY(1000);
+  PIN_STATE(PIN13, HIGH);
+  t1.delay(1000);
+  // DELAY(1000);
+  PIN_STATE(PIN13, LOW);
+  t1.delay(1000);
+  // DELAY(1000);
 }
