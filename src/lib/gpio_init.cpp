@@ -9,6 +9,7 @@
 
 #include "gpio_uno.h"
 #include "pin_map.h"
+#include "utils_uno.h"
 
 GPIO::GPIO(digital_pin pin, pin_mode mode) : pin{pin}, mode{mode}, state{LOW} {
   if (pin >= 8) {
