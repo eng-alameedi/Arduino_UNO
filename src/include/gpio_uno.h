@@ -21,9 +21,20 @@
  *
  * @PINB: this the pin (b) register which read the input digital signal to pin.
  **/
+
 #define PORTB (0x25)
 #define DDRB (0x24)
 #define PINB (0x23)
+typedef struct {
+  uint8_t PB0 : 1;
+  uint8_t PB1 : 1;
+  uint8_t PB2 : 1;
+  uint8_t PB3 : 1;
+  uint8_t PB4 : 1;
+  uint8_t PB5 : 1;
+  uint8_t PB6 : 1;
+  uint8_t PB7 : 1;
+} port_B;
 
 /**
  * @brief: this block of definition for the block (C) of ATmega328p register.
@@ -34,9 +45,20 @@
  *
  * @PINB: this the pin (c) register which read the input digital signal to pin.
  **/
+
 #define PORTC (0x28)
 #define DDRC (0x27)
 #define PINC (0x26)
+typedef struct {
+  uint8_t PC0 : 1;
+  uint8_t PC1 : 1;
+  uint8_t PC2 : 1;
+  uint8_t PC3 : 1;
+  uint8_t PC4 : 1;
+  uint8_t PC5 : 1;
+  uint8_t PC6 : 1;
+  uint8_t PC7 : 1;
+} port_C;
 
 /**
  * @brief: this block of definition for the block (B) of ATmega328p register.
@@ -47,8 +69,19 @@
  *
  * @PINB: this the pin (d) register which read the input digital signal to pin.
  **/
+
 #define PORTD (0x2B)
 #define DDRD (0x2A)
 #define PIND (0x29)
+typedef struct {
+  uint8_t PD0 : 1;
+  uint8_t PD1 : 1;
+  uint8_t PD2 : 1;
+  uint8_t PD3 : 1;
+  uint8_t PD4 : 1;
+  uint8_t PD5 : 1;
+  uint8_t PD6 : 1;
+  uint8_t PD7 : 1;
+} port_D;
 
 #endif  // _GPIO_UNO_H_
