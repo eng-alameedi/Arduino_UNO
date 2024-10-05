@@ -8,10 +8,8 @@
 #include "Arduino_test.h"
 
 PIN_INIT(PIN11, OUTPUT);
-
-void setup() {
-  // code here
-}
+PIN_INIT(PIN13, OUTPUT);
+void setup() { PIN_STATE(PIN13, LOW); }
 
 void loop() {
   PIN_STATE(PIN11, HIGH);
