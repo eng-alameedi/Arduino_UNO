@@ -26,14 +26,14 @@
 #define DDRB (0x24)
 #define PINB (0x23)
 typedef struct {
-  uint8_t B0 : 1;
-  uint8_t B1 : 1;
-  uint8_t B2 : 1;
-  uint8_t B3 : 1;
-  uint8_t B4 : 1;
-  uint8_t B5 : 1;
-  uint8_t B6 : 1;
-  uint8_t B7 : 1;
+  volatile uint8_t B0 : 1;
+  volatile uint8_t B1 : 1;
+  volatile uint8_t B2 : 1;
+  volatile uint8_t B3 : 1;
+  volatile uint8_t B4 : 1;
+  volatile uint8_t B5 : 1;
+  volatile uint8_t B6 : 1;
+  volatile uint8_t B7 : 1;
 } port_B;
 
 /**
