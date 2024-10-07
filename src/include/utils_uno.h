@@ -48,12 +48,26 @@
 
 #define _MIMO(mem_addr) (*(volatile uint8_t*)(mem_addr))
 */
-
+#ifndef _SRF
 #define _SFR(reg_addr) ((volatile uint8_t*)(reg_addr))  // simple memory register function
+#endif
 
 // extern GPIO_REAL* gp;
 
+#ifndef _BV
 #define _BV(bit) (1 << bit)  // used for set the desire bit to high (1)
+#endif
+
+// define a vector macro
+#ifndef _VECTOR
+#define _VECTOR(N) __vector_##N
+#endif
+
+// define the ISR mactor (interrupt services routine)
+#ifndef ISR
+#define ISR(vector, ...) extern "C" void vector(void) __attribure__((signal, used, externally_visible)) __VA_ARGS__;
+void vector(void);
+#endif
 
 /**
  *
