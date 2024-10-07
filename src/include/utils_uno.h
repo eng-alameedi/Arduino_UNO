@@ -65,8 +65,9 @@
 
 // define the ISR mactor (interrupt services routine)
 #ifndef ISR
-#define ISR(vector, ...) extern "C" void vector(void) __attribure__((signal, used, externally_visible)) __VA_ARGS__;
-void vector(void);
+#define ISR(vector, ...)                                                                      \
+  extern "C" void vector(void) __attribute__((signal, used, externally_visible)) __VA_ARGS__; \
+  void vector(void)
 #endif
 
 /**
