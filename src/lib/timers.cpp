@@ -67,8 +67,8 @@ void Timer0::ctc_setup() {
     TCNT0 = 0;
 
     TCCR0B = _BV(CS01) | _BV(CS00);  // set the prescaler to 64 011
-    TIMSK0 |= _BV(OCIE0A);           // enable the OCR0A compare
-    OCR0A = 249;                     // (250-1), set the compare register for 1ms per 1000hz of cpu clock
+    // TIMSK0 |= _BV(OCIE0A);           // enable the OCR0A compare
+    OCR0A = 249;  // (250-1), set the compare register for 1ms per 1000hz of cpu clock
 
     set_active(true);
     set_run(true);

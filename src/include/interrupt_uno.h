@@ -29,7 +29,7 @@
  * EICRA, control bits for interrupt sense control
  *
  **/
-#define EICRA (0x69)
+#define EICRA (*(volatile uint8_t*)0x69)
 #define ISC11 (3)
 #define ISC10 (2)
 #define ISC01 (1)
@@ -41,7 +41,7 @@
  * EIMSK, control bits for interrupt INT1, and INT0
  *
  **/
-#define EIMSK (0x3D)
+#define EIMSK (*(volatile uint8_t*)0x3D)
 #define INT1 (1)
 #define INT0 (0)
 
