@@ -12,6 +12,7 @@
 #include "gpio_init.h"
 #include "gpio_real.h"
 #include "gpio_uno.h"
+#include "interrupt_uno.h"
 #include "pin_map.h"
 #include "timer_uno.h"
 #include "timers.h"

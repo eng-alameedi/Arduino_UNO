@@ -16,7 +16,7 @@
  * MCU control register, controls the placement of the interrupt vector table
  *
  **/
-#define MCUCR (0x35)
+#define MCUCR (0x55)
 #define BODS (6)
 #define BODSE (5)
 #define PUD (4)
@@ -29,7 +29,7 @@
  * EICRA, control bits for interrupt sense control
  *
  **/
-#define EICRA (0x69)
+#define EICRA (*(volatile uint8_t*)0x69)
 #define ISC11 (3)
 #define ISC10 (2)
 #define ISC01 (1)
@@ -41,7 +41,7 @@
  * EIMSK, control bits for interrupt INT1, and INT0
  *
  **/
-#define EIMSK (0x1D)
+#define EIMSK (*(volatile uint8_t*)0x3D)
 #define INT1 (1)
 #define INT0 (0)
 
@@ -51,7 +51,7 @@
  * EIFR, control bits for interrupt INTF1, and INTF0
  *
  **/
-#define EIFR (0x1C)
+#define EIFR (0x3C)
 #define INTF1 (1)
 #define INTF0 (0)
 
@@ -72,7 +72,7 @@
  * PCICR, control bits for interrupt flag when pin change
  *
  **/
-#define PCIFR (0x1B)
+#define PCIFR (0x3B)
 #define PCIF2 (2)
 #define PCIF1 (1)
 #define PCIF0 (0)

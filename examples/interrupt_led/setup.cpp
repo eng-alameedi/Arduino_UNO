@@ -6,22 +6,30 @@
 //
 
 #include "Arduino_test.h"
-#include "interrupt_uno.h"
-#include "pin_map.h"
-#include "utils_uno.h"
 
-// GPIO_REAL* gp;
+void setup_int0_interrupt(void);
 
-// GPIO_REAL gp(PIN13, OUTPUT);
 PIN_INIT(PIN13, OUTPUT);
-PIN_INIT(PIN11, OUTPUT);
+PIN_INIT(PIN8, OUTPUT);
+PIN_INIT(PIN2, INPUT);
 
-ISR(INIT0) { PIN_STATE(PIN11, HIGH); }
-void setup() { PIN_STATE(PIN11, LOW); }
+ISR(INIT0) { PIN_STATE(PIN8, HIGH); }
+
+void setup() {
+  PIN_STATE(PIN8, LOW);
+  PIN_STATE(PIN2, HIGH);
+  setup_int0_interrupt();
+}
 
 void loop() {
   PIN_STATE(PIN13, HIGH);
   DELAY(1000);
   PIN_STATE(PIN13, LOW);
   DELAY(1000);
+}
+
+void setup_int0_interrupt(void) {
+  EICRA |= _BV(ISC01);
+  EICRA &= ~(_BV(ISC00));
+  EIMSK |= _BV(INT0);
 }
