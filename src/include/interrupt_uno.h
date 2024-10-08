@@ -51,7 +51,7 @@
  * EIFR, control bits for interrupt INTF1, and INTF0
  *
  **/
-#define EIFR (0x1C)
+#define EIFR (0x3C)
 #define INTF1 (1)
 #define INTF0 (0)
 
@@ -72,7 +72,7 @@
  * PCICR, control bits for interrupt flag when pin change
  *
  **/
-#define PCIFR (0x1B)
+#define PCIFR (0x3B)
 #define PCIF2 (2)
 #define PCIF1 (1)
 #define PCIF0 (0)

@@ -65,7 +65,7 @@
  * and config the 7th bit which (I).
  *
  **/
-#define SREG *((volatile uint8_t*)0x5F)  // define the global interrupt register (I) is the 7th bit.
+#define SREG *((volatile uint8_t*)0x3F)  // define the global interrupt register (I) is the 7th bit.
 
 //<<<<<<<<<<<<<<<<<<<<<<<<=============================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

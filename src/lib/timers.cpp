@@ -58,7 +58,7 @@ void Timer0::count() {
 }
 
 void Timer0::ctc_setup() {
-  cli();
+  // cli();
 
   if (!get_active()) {
     TCCR0A = 0x00;
