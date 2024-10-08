@@ -73,7 +73,7 @@ void Timer0::ctc_setup() {
     set_active(true);
     set_run(true);
   }
-  sei();
+  // sei();
 }
 
 void Timer0::delay(unsigned int ms) {

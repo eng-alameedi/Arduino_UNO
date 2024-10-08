@@ -16,7 +16,7 @@
  * MCU control register, controls the placement of the interrupt vector table
  *
  **/
-#define MCUCR (0x35)
+#define MCUCR (0x55)
 #define BODS (6)
 #define BODSE (5)
 #define PUD (4)
@@ -41,7 +41,7 @@
  * EIMSK, control bits for interrupt INT1, and INT0
  *
  **/
-#define EIMSK (0x1D)
+#define EIMSK (0x3D)
 #define INT1 (1)
 #define INT0 (0)
 
