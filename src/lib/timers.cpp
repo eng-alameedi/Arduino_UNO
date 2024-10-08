@@ -11,13 +11,15 @@
 #include "timer_uno.h"
 #include "utils_uno.h"
 
+#define I_BIT (7)
+
 void sei() {
-  SREG |= (1 << 7);  // enable the global interrupts
+  SREG |= _BV(I_BIT);  // enable the global interrupts
   // same as __asm__ __volatile__("sei");
 }
 
 void cli() {
-  SREG &= ~(1 << 7);  // disable the global interrupts
+  SREG &= ~(_BV(I_BIT));  // disable the global interrupts
   // same as __asm__ __volatile__("cli");
 }
 
@@ -58,8 +60,6 @@ void Timer0::count() {
 }
 
 void Timer0::ctc_setup() {
-  // cli();
-
   if (!get_active()) {
     TCCR0A = 0x00;
     TCCR0A = _BV(WGM01);
@@ -73,7 +73,6 @@ void Timer0::ctc_setup() {
     set_active(true);
     set_run(true);
   }
-  // sei();
 }
 
 void Timer0::delay(unsigned int ms) {
