@@ -130,7 +130,7 @@
  * WDTCSR, to control the timer behavior, and control
  *
  **/
-#define WDTCSR (0x60)
+#define WDTCSR (*(volatile uint8_t*)0x60)
 #define WDIF (7)
 #define WDIE (6)
 #define WDP3 (5)
