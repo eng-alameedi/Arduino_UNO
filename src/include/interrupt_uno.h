@@ -126,10 +126,28 @@
 
 /**
  *
+ * @brief: this block define the "watch-dog timer control register"
+ * WDTCSR, to control the timer behavior, and control
+ *
+ **/
+#define WDTCSR (*(volatile uint8_t*)0x60)
+#define WDIF (7)
+#define WDIE (6)
+#define WDP3 (5)
+#define WDCE (4)
+#define WDE (3)
+#define WDP2 (2)
+#define WDP1 (1)
+#define WDP0 (0)
+
+/**
+ *
  * @brief: define the mostly used interrupt routine in ATmega328p
  *
  **/
 #define RESET (_VECTOR(0))
 #define INIT0 (_VECTOR(1))
+#define INIT1 (_VECTOR(2))
+#define WDT (_VECTOR(6))
 
 #endif  // _INTERRUPT_UNO_H_
