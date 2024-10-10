@@ -22,7 +22,7 @@ add_custom_command(TARGET ${file_name}.elf
 
 # Upload command
 add_custom_target(upload4
-  COMMAND avrdude -c arduino -p m328p -P /dev/ttyUSB0 -U flash:w:${file_name}.hex:i
+  COMMAND avrdude -c arduino -p m328p -P /dev/ttyUSB2 -U flash:w:${file_name}.hex:i
   DEPENDS ${file_name}.hex
   COMMENT "Uploading HEX file to Arduino Uno"
 )
