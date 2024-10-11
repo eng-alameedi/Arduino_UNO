@@ -6,7 +6,6 @@
 //
 
 #include "Arduino_test.h"
-#include "serial_uno.h"
 
 const char* msg = "Hello From Arduino Uno \n\r";
 
@@ -26,9 +25,8 @@ void loop() {
   PIN_STATE(PIN13, LOW);
   DELAY(1000);
   if (PIN_READ(PIN2)) {
-    while (*msg) {
-      usart_transmit(*msg++);
-    }
+    usart_format(msg);
     PIN_STATE(PIN8, HIGH);
+    DELAY(1000);
   }
 }

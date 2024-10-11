@@ -52,6 +52,7 @@
 #define UCPOL0 (0)
 
 void usart_init(void);
+void usart_format(const char*);
 void usart_transmit(char);
 char usart_receive();
 
