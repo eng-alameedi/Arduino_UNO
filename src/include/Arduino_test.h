@@ -14,6 +14,7 @@
 #include "gpio_uno.h"
 #include "interrupt_uno.h"
 #include "pin_map.h"
+#include "serial_uno.h"
 #include "timer_uno.h"
 #include "timers.h"
 #include "utils_uno.h"
