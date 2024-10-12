@@ -6,6 +6,7 @@
 //
 
 #include "Arduino_test.h"
+#include "serial_uno.h"
 
 volatile char msg{};
 
