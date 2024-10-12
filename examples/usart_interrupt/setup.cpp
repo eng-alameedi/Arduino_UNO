@@ -6,11 +6,8 @@
 //
 
 #include "Arduino_test.h"
-#include "interrupt_uno.h"
-#include "serial_uno.h"
-#include "utils_uno.h"
 
-char msg;
+volatile char msg{};
 
 void usart_rx_interrupt_setup(void);
 
@@ -22,10 +19,11 @@ ISR(USART_RX) {
   msg = usart_receive();
   PIN_STATE(PIN8, HIGH);
 }
+
+ISR(USART_TX) { PIN_STATE(PIN8, LOW); }
 void setup() {
   PIN_STATE(PIN8, LOW);
   PIN_STATE(PIN2, HIGH);
-  usart_rx_interrupt_setup();
   usart_init();
 }
 
@@ -36,8 +34,6 @@ void loop() {
   DELAY(1000);
   if (PIN_READ(PIN2)) {
     usart_transmit(msg);
-    PIN_STATE(PIN8, LOW);
-    DELAY(1000);
   }
   // PIN_STATE(PIN8, LOW);
 }

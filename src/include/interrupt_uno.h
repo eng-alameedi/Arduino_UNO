@@ -149,6 +149,7 @@
 #define INIT0 (_VECTOR(1))
 #define INIT1 (_VECTOR(2))
 #define WDT (_VECTOR(6))
-#define USART_RX (_VECTOR(13))
+#define USART_RX (_VECTOR(18))
+#define USART_TX (_VECTOR(20))
 
 #endif  // _INTERRUPT_UNO_H_
