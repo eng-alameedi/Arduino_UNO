@@ -63,13 +63,24 @@
 #define _VECTOR(N) __vector_##N
 #endif
 
-// define the ISR mactor (interrupt services routine)
-#ifndef ISR
-#define ISR(vector, ...)                                                                      \
-  extern "C" void vector(void) __attribute__((signal, used, externally_visible)) __VA_ARGS__; \
-  void vector(void)
+#if defined(__AVR_ATmega328P__)
+#define __INTR_ATTRS __used__, __externally_visible__
+#else
+#define __INTR_ATTRS__ __used__
 #endif
 
+// define the ISR mactor (interrupt services routine)
+#ifndef ISR
+#ifdef __cplusplus
+#define ISR(vector, ...)                                                              \
+  extern "C" void vector(void) __attribute__((__signal__, __INTR_ATTRS)) __VA_ARGS__; \
+  void vector(void)
+#else
+#define ISR(vector, ...)                                                   \
+  void vector(void) __attribute__((__signal__, __INTR_ATTRS)) __VA_ARGS__; \
+  void vector(void)
+#endif  // define of ISR for cpp, and c.
+#endif
 /**
  *
  * @brief: this function will setup the required pin parameter once such pin
