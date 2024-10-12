@@ -19,3 +19,8 @@ void usart_transmit(char letter) {
     ;
   _MEM_8(UDR0) = letter;
 }
+
+char usart_receive() {
+  while (!(_MEM_8(UCSR0A) & (1 << RXC0)));
+  return (_MEM_8(UDR0));
+}
